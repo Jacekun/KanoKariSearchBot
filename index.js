@@ -18,7 +18,7 @@ client.on('message', message => {
 		// !help command
 		if (query == '!kkhelp') {
 
-		message.channel.send("```Use !kksearch text_to_search  to query.\nNOTE: Use ONLY lowercase and AVOID using special characters. Only special character allowed is apostrophe ( ' ).\nExample: !kksearch sumi-chan's```")
+		message.channel.send("```Use '!kksearch text_to_search'  to query.\nNOTE: Use ONLY lowercase and AVOID using special characters. Only special character allowed is an Apostrophe ( ' ).\nExample: !kksearch sumi-chan's```")
 		.catch(err => console.error(err));
 
 		}
@@ -27,49 +27,51 @@ client.on('message', message => {
 		var results = "";
 		var pageRes = "";
 		var len = query.length - 9;
-		var searchString = query.substr(10, len);
+		var searchString = query.substr(10, len).trim();
 		var chapterCount = 0;
-
-		// Iterate through every chapter
-		for (var i in JSONObj.KK) {
+		
+		if (searchString !== "") {
 			
-			pageRes = "";
-			var chapter = JSONObj.KK[i].chap;
-			//console.log("Chapter: [" + chapter + "]");
-			
-			// Iterate through pages
-			for (var ii in JSONObj.KK[i].page) {
-			
-				var page = JSONObj.KK[i].page[ii].id;
-				var text = JSONObj.KK[i].page[ii].str;
-				//console.log(page);
-				//console.log(text);
+			// Iterate through every chapter
+			for (var i in JSONObj.KK) {
 				
-				if (text.includes(searchString))
-				{
-					pageRes = pageRes.concat(page, ', ');
+				pageRes = "";
+				var chapter = JSONObj.KK[i].chap;
+				//console.log("Chapter: [" + chapter + "]");
+				
+				// Iterate through pages
+				for (var ii in JSONObj.KK[i].page) {
+				
+					var page = JSONObj.KK[i].page[ii].id;
+					var text = JSONObj.KK[i].page[ii].str;
+					//console.log(page);
+					//console.log(text);
+					
+					if (text.includes(searchString))
+					{
+						pageRes = pageRes.concat(page, ', ');
+					}
 				}
+				
+				//console.log("Page Results: [" + pageRes + "]");
+				if (pageRes !== "")
+				{
+					results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
+					chapterCount = chapterCount + 1;
+				}
+				
+			}
+			// check if there are no results.
+			if (results === "") {
+				results = "Nothing found!";
 			}
 			
-			//console.log("Page Results: [" + pageRes + "]");
-			if (pageRes !== "")
-			{
-				results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
-				chapterCount = chapterCount + 1;
+			// send the message
+			message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" +results + "```")
+			.catch(err => console.error(err));
+
 			}
-			
 		}
-		// check if there is a result, and send it.
-		if (results === "")
-		{
-			results = "```Nothing found for search query: " + searchString + "```";
-		}
-
-		message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" +results + "```")
-		.catch(err => console.error(err));
-
-		}
-	
 	}
 });
 
