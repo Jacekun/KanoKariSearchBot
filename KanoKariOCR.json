@@ -5,6 +5,7 @@
 		"chap": "155",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and the sudden trip"},
 			{"id":"2", "str":"so from here on we're doing this as friends wha hu whaaaaaa"},
 			{"id":"3", "str":"sumi cover"},
 			{"id":"4", "str":"they wanted it to feel like a real trip so they split the cost of business class did you see that girl a couple seats back in the other row totally my type man that's the dream going to shonan with a cutie like her so from here on we're doing this as friends"},
@@ -30,6 +31,7 @@
 		"chap": "154",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and resolve"},
 			{"id":"2", "str":"chizuru cover"},
 			{"id":"3", "str":"sumi-chan hey there you alright i don't think i've seen you since we handed out fliers i really appreciated that i hope you don't mind that it's only an hour i don't have much money the movie turned out okay catches on quick oh yeah thanks to you it's all done"},
 			{"id":"4", "str":"god really is cruel huh i asked you out today to get your advice on something"},
@@ -39,13 +41,20 @@
 			{"id":"8", "str":"this doesn't make me feel any better she's really bawling she took the news about grandma sayuri hard ah she perked back up chizu"},
 			{"id":"9", "str":"no good i guess still can't talk huh is chizuru-chan alright i'm fine well about that i'm not really sure"},
 			{"id":"10", "str":"she said she's fine and smiled like she always does she was like the same old mizuhara but it was her grandma you know her last living relative how could she not be sad like if she were so devastated she was crying i'd want to do something to help her but if she just smiles at me like that what can i really do"},
-			{"id":"11", "str":"i helped her make the movie but in the end our relationship hasn't changed i'm just her client i feel like i'm not really in position to support her "}
+			{"id":"11", "str":"i helped her make the movie but in the end our relationship hasn't changed i'm just her client i feel like i'm not really in position to support her a friend told me recently that everybody needs somebody to get by but i wonder if that's true if somebody can put on a brave face even at a time like this then i feel like right there in front of me is somebody who doesn't need anybody"},
+			{"id":"12", "str":"well that's what i want to believe but the truth is my hands are tied i felt like maybe you'd know maybe you understand her feelings better than i do did she just chug her darjeeling thank you for the tea"},
+			{"id":"13", "str":"wh sumi-chan huh where are we going the check we have to pay i'm not trying to dine and dash thank you very much"},
+			{"id":"14", "str":"shinjuku why shinjuku why'd she suddenly drag me to the city why here of all places slow down she's already through the gate"},
+			{"id":"15", "str":"are we getting on a train track one fujisawa shonan"},
+			{"id":"16", "str":"huh the shonan line we're going to fujisawa what why that train shonan that doesn't mean sumi-chan you aren't"},
+			{"id":"17", "str":"sample"}
 		]
 	},
 	{
 		"chap": "153",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and the goodbye"},
 			{"id":"2", "str":"kazuya cover"}
 		]
 	},
@@ -53,6 +62,7 @@
 		"chap": "152",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and lies part 5"},
 			{"id":"2", "str":"chizuru cover colored"}
 		]
 	},
@@ -60,13 +70,50 @@
 		"chap": "151",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and lies part 4"},
 			{"id":"2", "str":"chizuru cover"}
+		]
+	},
+	{
+		"chap": "150",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and lies part 3"}
+		]
+	},
+	{
+		"chap": "149",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, dreams, and me"}
+		]
+	},
+	{
+		"chap": "148",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and lies part 2"}
+		]
+	},
+	{
+		"chap": "147",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and lies part 1"}
+		]
+	},
+	{
+		"chap": "146",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and family part 2"}
 		]
 	},
 	{
 		"chap": "145",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and family part 1"},
 			{"id":"3", "str":"chizuru cover sayuri"}
 		]
 	},
@@ -74,6 +121,7 @@
 		"chap": "144",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and kazuya"},
 			{"id":"3", "str":"chizuru cover"}
 		]
 	},
@@ -81,7 +129,1016 @@
 		"chap": "143",
 		"page":
 		[
+			{"id":"0", "str":"the girlfriend and the seedling"},
 			{"id":"3", "str":"chizuru cover"}
+		]
+	},
+	{
+		"chap": "142",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the promise part 4"}
+		]
+	},
+	{
+		"chap": "141",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the promise part 3"}
+		]
+	},
+	{
+		"chap": "140",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the promise part 2"}
+		]
+	},
+	{
+		"chap": "139",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the promise part 1"}
+		]
+	},
+	{
+		"chap": "138",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 7"}
+		]
+	},
+	{
+		"chap": "137",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 6"}
+		]
+	},
+	{
+		"chap": "136",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 5"}
+		]
+	},
+	{
+		"chap": "135",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 4"}
+		]
+	},
+	{
+		"chap": "134",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 3"}
+		]
+	},
+	{
+		"chap": "133",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 2"}
+		]
+	},
+	{
+		"chap": "132",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last scene part 1"}
+		]
+	},
+	{
+		"chap": "131",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and filming part 3"}
+		]
+	},
+	{
+		"chap": "130.5",
+		"page":
+		[
+			{"id":"0", "str":"kanokari mythology kanokari gaiden"}
+		]
+	},
+	{
+		"chap": "130",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and filming part 2"}
+		]
+	},
+	{
+		"chap": "129",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and filming part 1"}
+		]
+	},
+	{
+		"chap": "128",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and introductions"}
+		]
+	},
+	{
+		"chap": "127",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last day part 5"}
+		]
+	},
+	{
+		"chap": "126",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last day part 4"}
+		]
+	},
+	{
+		"chap": "125",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last day part 3"}
+		]
+	},
+	{
+		"chap": "124",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last day part 2"}
+		]
+	},
+	{
+		"chap": "123",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the last day part 1"}
+		]
+	},
+	{
+		"chap": "122",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and room 204 part 2"}
+		]
+	},
+	{
+		"chap": "121",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and room 204"}
+		]
+	},
+	{
+		"chap": "120",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and handing out flyers"}
+		]
+	},
+	{
+		"chap": "119",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, the girlfriend and the girlfriend 2"}
+		]
+	},
+	{
+		"chap": "118",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, the girlfriend and the girlfriend"}
+		]
+	},
+	{
+		"chap": "117",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and the director"}
+		]
+	},
+	{
+		"chap": "116",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and the script"}
+		]
+	},
+	{
+		"chap": "115",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and the neighbour 6"}
+		]
+	},
+	{
+		"chap": "114",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and the neighbour 5"}
+		]
+	},
+	{
+		"chap": "113",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and the neighbour 4"}
+		]
+	},
+	{
+		"chap": "112",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and him"}
+		]
+	},
+	{
+		"chap": "111",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, room 203, and the other girflriend 2"}
+		]
+	},
+	{
+		"chap": "110",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, room 203, and the other girlfriend"}
+		]
+	},
+	{
+		"chap": "109",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and omurice"}
+		]
+	},
+	{
+		"chap": "108",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and room 203 2"}
+		]
+	},
+	{
+		"chap": "107",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and room 203"}
+		]
+	},
+	{
+		"chap": "106",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and the neighbour 3"}
+		]
+	},
+	{
+		"chap": "105",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, my neighbour 2"}
+		]
+	},
+	{
+		"chap": "104",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and splitting the bill"}
+		]
+	},
+	{
+		"chap": "103",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, dreams and me"}
+		]
+	},
+	{
+		"chap": "102",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, and dreams"}
+		]
+	},
+	{
+		"chap": "101",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, mizuhara chizuru 3"}
+		]
+	},
+	{
+		"chap": "100",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, mizuhara chizuru 2"}
+		]
+	},
+	{
+		"chap": "99",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and what she can do"}
+		]
+	},
+	{
+		"chap": "98",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 7"}
+		]
+	},
+	{
+		"chap": "97",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 6"}
+		]
+	},
+	{
+		"chap": "96",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 5"}
+		]
+	},
+	{
+		"chap": "95",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 4"}
+		]
+	},
+	{
+		"chap": "94",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 3"}
+		]
+	},
+	{
+		"chap": "93",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 2"}
+		]
+	},
+	{
+		"chap": "92",
+		"page":
+		[
+			{"id":"0", "str":"what i can do with my girlfriend 1"}
+		]
+	},
+	{
+		"chap": "91",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the time limit 2"}
+		]
+	},
+	{
+		"chap": "90",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the time limit"}
+		]
+	},
+	{
+		"chap": "89",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 7"}
+		]
+	},
+	{
+		"chap": "88",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 6"}
+		]
+	},
+	{
+		"chap": "87",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 5"}
+		]
+	},
+	{
+		"chap": "86",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 4"}
+		]
+	},
+	{
+		"chap": "85",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 3"}
+		]
+	},
+	{
+		"chap": "84",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 2"}
+		]
+	},
+	{
+		"chap": "83",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, visiting the parents, and kiss 1"}
+		]
+	},
+	{
+		"chap": "82",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the dream date 5"}
+		]
+	},
+	{
+		"chap": "81",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the dream date 4"}
+		]
+	},
+	{
+		"chap": "80",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the dream date 3"}
+		]
+	},
+	{
+		"chap": "79",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the dream date 2"}
+		]
+	},
+	{
+		"chap": "78",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the dream date 1"}
+		]
+	},
+	{
+		"chap": "77",
+		"page":
+		[
+			{"id":"0", "str":"the ex and the rental 4"}
+		]
+	},
+	{
+		"chap": "76",
+		"page":
+		[
+			{"id":"0", "str":"the ex and the rental 2"}
+		]
+	},
+	{
+		"chap": "75",
+		"page":
+		[
+			{"id":"0", "str":"the ex and the rental 1"}
+		]
+	},
+	{
+		"chap": "74",
+		"page":
+		[
+			{"id":"0", "str":"the hangover and the girlfriend"}
+		]
+	},
+	{
+		"chap": "73",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the booze 4"}
+		]
+	},
+	{
+		"chap": "72",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the booze 3"}
+		]
+	},
+	{
+		"chap": "71",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the booze 2"}
+		]
+	},
+	{
+		"chap": "70",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the booze 1"}
+		]
+	},
+	{
+		"chap": "69",
+		"page":
+		[
+			{"id":"0", "str":"birthday and girlfriend 4"}
+		]
+	},
+	{
+		"chap": "69.5",
+		"page":
+		[
+			{"id":"0", "str":"kanojo, okarishimasu x senryuu shoujo"}
+		]
+	},
+	{
+		"chap": "68",
+		"page":
+		[
+			{"id":"0", "str":"birthday and girlfriend 3"}
+		]
+	},
+	{
+		"chap": "67",
+		"page":
+		[
+			{"id":"0", "str":"birthday and girlfriend 2"}
+		]
+	},
+	{
+		"chap": "66",
+		"page":
+		[
+			{"id":"0", "str":"birthday and girlfriend 1"}
+		]
+	},
+	{
+		"chap": "65",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the night 4"}
+		]
+	},
+	{
+		"chap": "64",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the night 3"}
+		]
+	},
+	{
+		"chap": "63",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the night 2"}
+		]
+	},
+	{
+		"chap": "62",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the night 1"}
+		]
+	},
+	{
+		"chap": "61",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, chizuru ichinose 6"}
+		]
+	},
+	{
+		"chap": "60",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, chizuru ichinose 5"}
+		]
+	},
+	{
+		"chap": "59",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, chizuru ichinose 4"}
+		]
+	},
+	{
+		"chap": "58",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, chizuru ichinose 3"}
+		]
+	},
+	{
+		"chap": "57",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, chizuru ichinose 2"}
+		]
+	},
+	{
+		"chap": "56",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, chizuru ichinose 1"}
+		]
+	},
+	{
+		"chap": "55",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the father"}
+		]
+	},
+	{
+		"chap": "54",
+		"page":
+		[
+			{"id":"0", "str":"a day in the life of sakurasawa sumi"}
+		]
+	},
+	{
+		"chap": "53",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her dream 4"}
+		]
+	},
+	{
+		"chap": "52",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her dream 3"}
+		]
+	},
+	{
+		"chap": "51",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her dream 2"}
+		]
+	},
+	{
+		"chap": "50",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her dream 1"}
+		]
+	},
+	{
+		"chap": "49",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the confession"}
+		]
+	},
+	{
+		"chap": "48",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the ex-girlfriend 3"}
+		]
+	},
+	{
+		"chap": "47",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the ex-girlfriend 2"}
+		]
+	},
+	{
+		"chap": "46",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the end 2"}
+		]
+	},
+	{
+		"chap": "45",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the end 1"}
+		]
+	},
+	{
+		"chap": "44",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the promise on the balcony 2"}
+		]
+	},
+	{
+		"chap": "43",
+		"page":
+		[
+			{"id":"0", "str":"the unsuitable girlfriend 3"}
+		]
+	},
+	{
+		"chap": "42",
+		"page":
+		[
+			{"id":"0", "str":"the unsuitable girlfriend 2"}
+		]
+	},
+	{
+		"chap": "41",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the promise on the balcony 1"}
+		]
+	},
+	{
+		"chap": "40",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the pantsu"}
+		]
+	},
+	{
+		"chap": "39",
+		"page":
+		[
+			{"id":"0", "str":"the chicken and the girlfriend 3"}
+		]
+	},
+	{
+		"chap": "38",
+		"page":
+		[
+			{"id":"0", "str":"the chicken and the girlfriend 2"}
+		]
+	},
+	{
+		"chap": "37",
+		"page":
+		[
+			{"id":"0", "str":"the friend's girlfriends"}
+		]
+	},
+	{
+		"chap": "36",
+		"page":
+		[
+			{"id":"0", "str":"the two girlfriends part 5"}
+		]
+	},
+	{
+		"chap": "35",
+		"page":
+		[
+			{"id":"0", "str":"the two girlfriends part 4"}
+		]
+	},
+	{
+		"chap": "34",
+		"page":
+		[
+			{"id":"0", "str":"the two girlfriends part 3"}
+		]
+	},
+	{
+		"chap": "33",
+		"page":
+		[
+			{"id":"0", "str":"the two girlfriends part 2"}
+		]
+	},
+	{
+		"chap": "32",
+		"page":
+		[
+			{"id":"0", "str":"the two girlfriends part 1"}
+		]
+	},
+	{
+		"chap": "31",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and christmas part 3"}
+		]
+	},
+	{
+		"chap": "30",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and christmas part 2"}
+		]
+	},
+	{
+		"chap": "29",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and christmas part 1"}
+		]
+	},
+	{
+		"chap": "28",
+		"page":
+		[
+			{"id":"0", "str":"the ‘girlfriend’, sarashina ruka"}
+		]
+	},
+	{
+		"chap": "27",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 8"}
+		]
+	},
+	{
+		"chap": "26",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 7"}
+		]
+	},
+	{
+		"chap": "25",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 6"}
+		]
+	},
+	{
+		"chap": "24",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 5"}
+		]
+	},
+	{
+		"chap": "23",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 4"}
+		]
+	},
+	{
+		"chap": "22",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 3"}
+		]
+	},
+	{
+		"chap": "21",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 2"}
+		]
+	},
+	{
+		"chap": "20",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and her part 1"}
+		]
+	},
+	{
+		"chap": "19",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the onsen part 3"}
+		]
+	},
+	{
+		"chap": "18",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the onsen part 2"}
+		]
+	},
+	{
+		"chap": "17",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the onsen part 1"}
+		]
+	},
+	{
+		"chap": "16",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and impulse"}
+		]
+	},
+	{
+		"chap": "15",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the sea part 2"}
+		]
+	},
+	{
+		"chap": "14",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the sea part 1"}
+		]
+	},
+	{
+		"chap": "13",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and friends"}
+		]
+	},
+	{
+		"chap": "12",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and fighting like kids"}
+		]
+	},
+	{
+		"chap": "11",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the pocky game"}
+		]
+	},
+	{
+		"chap": "10",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the sea part 4"}
+		]
+	},
+	{
+		"chap": "9",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the sea part 3"}
+		]
+	},
+	{
+		"chap": "8",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the sea part 2"}
+		]
+	},
+	{
+		"chap": "7",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the sea part 1"}
+		]
+	},
+	{
+		"chap": "6",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and my broken heart"}
+		]
+	},
+	{
+		"chap": "5",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and the ex"}
+		]
+	},
+	{
+		"chap": "4",
+		"page":
+		[
+			{"id":"0", "str":"the ex, nanami mami"}
+		]
+	},
+	{
+		"chap": "3",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend and my neighbour"}
+		]
+	},
+	{
+		"chap": "2",
+		"page":
+		[
+			{"id":"0", "str":"my girlfriend"}
+		]
+	},
+	{
+		"chap": "1",
+		"page":
+		[
+			{"id":"0", "str":"the girlfriend, mizuhara chizuru"}
 		]
 	}
 ]
