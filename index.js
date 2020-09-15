@@ -27,29 +27,35 @@ client.on('message', message => {
 		var results = "";
 		var pageRes = "";
 		var len = query.length - 9;
-		var searchString = query.substr(10, len).trim();
+		var searchString = query.substr(9, len).trim();
 		var chapterCount = 0;
 		
 		if (searchString !== "") {
 			
 			// Iterate through every chapter
-			for (var i in JSONObj.KK) {
+			for (var iChapter in JSONObj.KK) {
 				
 				pageRes = "";
-				var chapter = JSONObj.KK[i].chap;
-				//console.log("Chapter: [" + chapter + "]");
+				var chapter = JSONObj.KK[iChapter].chap;
 				
 				// Iterate through pages
-				for (var ii in JSONObj.KK[i].page) {
+				for (var iPages in JSONObj.KK[iChapter].page) {
 				
-					var page = JSONObj.KK[i].page[ii].id;
-					var text = JSONObj.KK[i].page[ii].str;
+					var page = JSONObj.KK[iChapter].page[iPages].id;
+					var text = JSONObj.KK[iChapter].page[iPages].str;
 					//console.log(page);
 					//console.log(text);
 					
 					if (text.includes(searchString))
 					{
-						pageRes = pageRes.concat(page, ', ');
+						if (page !== "0")
+						{
+							pageRes = pageRes.concat(page, ', ');
+						}
+						else
+						{
+							pageRes = pageRes.concat(text);
+						}
 					}
 				}
 				
@@ -67,9 +73,8 @@ client.on('message', message => {
 			}
 			
 			// send the message
-			message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" +results + "```")
+			message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" + results + "```")
 			.catch(err => console.error(err));
-
 			}
 		}
 	}
