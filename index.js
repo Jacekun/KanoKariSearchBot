@@ -3,6 +3,7 @@ const client = new Discord.Client();
 var fs = require("fs");
 var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
 var JSONObj = JSON.parse(json);
+console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
 	//console.log(json);
@@ -16,65 +17,88 @@ client.on('message', message => {
 	{
 
 		// !help command
-		if (query == '!kkhelp') {
+		if (query == '!kkhelp')
+		{
 
 		message.channel.send("```Use '!kksearch text_to_search'  to query.\nNOTE: Use ONLY lowercase and AVOID using special characters. Only special character allowed is an Apostrophe ( ' ).\nExample: !kksearch sumi-chan's```")
 		.catch(err => console.error(err));
 
 		}
-		else if (query.includes('!kksearch')) {
-
-		var results = "";
-		var pageRes = "";
-		var len = query.length - 9;
-		var searchString = query.substr(9, len).trim();
-		var chapterCount = 0;
-		
-		if (searchString !== "") {
+		// Search for text or chapter titles
+		else if (query.includes('!kksearch') || query.includes('!kktitles'))
+		{
 			
-			// Iterate through every chapter
-			for (var iChapter in JSONObj.KK) {
+			var searchForTitle = 0;
+			var results = "";
+			var pageRes = "";
+			var len = query.length - 9;
+			var searchString = query.substr(9, len).trim();
+			var chapterCount = 0;
+			
+			// Is it a search for Chapter titles?
+			if (query.includes('!kktitles'))
+			{
+				searchForTitle = 1;
+			}
+			
+			if (searchString !== "")
+			{
 				
-				pageRes = "";
-				var chapter = JSONObj.KK[iChapter].chap;
-				
-				// Iterate through pages
-				for (var iPages in JSONObj.KK[iChapter].page) {
-				
-					var page = JSONObj.KK[iChapter].page[iPages].id;
-					var text = JSONObj.KK[iChapter].page[iPages].str;
-					//console.log(page);
-					//console.log(text);
+				// Iterate through every chapter
+				for (var iChapter in JSONObj.KK)
+				{
 					
-					if (text.includes(searchString))
+					pageRes = "";
+					var chapter = JSONObj.KK[iChapter].chap;
+					
+					// Check if looking through all chapters
+					if (searchForTitle < 1)
 					{
-						if (page !== "0")
+						// Iterate through pages
+						for (var iPages in JSONObj.KK[iChapter].page)
 						{
-							pageRes = pageRes.concat(page, ', ');
+							var page = JSONObj.KK[iChapter].page[iPages].id;
+							var text = JSONObj.KK[iChapter].page[iPages].str;
+
+							if (page !== "0")
+							{
+								if (text.includes(searchString))
+								{
+									pageRes = pageRes.concat(page, ', ');
+								}
+							}
 						}
-						else
+						
+						// Check Results
+						if (pageRes !== "")
 						{
-							pageRes = pageRes.concat(text);
+							results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
+							chapterCount = chapterCount + 1;
+						}
+						
+					}
+					else
+					{
+						// Check only chapter 0 for title
+						var text = JSONObj.KK[iChapter].page[0].str;
+							
+						if (text.includes(searchString))
+						{
+							results = results.concat('\nChapter ', chapter, ' : ', pageRes);
+							chapterCount = chapterCount + 1;
 						}
 					}
 				}
 				
-				//console.log("Page Results: [" + pageRes + "]");
-				if (pageRes !== "")
+				// check if there are no results.
+				if (results === "")
 				{
-					results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
-					chapterCount = chapterCount + 1;
+					results = "Nothing found!";
 				}
 				
-			}
-			// check if there are no results.
-			if (results === "") {
-				results = "Nothing found!";
-			}
-			
-			// send the message
-			message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" + results + "```")
-			.catch(err => console.error(err));
+				// send the message
+				message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" + results + "```")
+				.catch(err => console.error(err));
 			}
 		}
 	}
