@@ -20,7 +20,7 @@ client.on('message', message => {
 		if (query == '!kkhelp')
 		{
 
-		message.channel.send("```Use '!kksearch text_to_search'  to query.\nNOTE: Use ONLY lowercase and AVOID using special characters. Only special character allowed is an Apostrophe ( ' ).\nExample: !kksearch sumi-chan's```")
+		message.channel.send("```Use '!kksearch text_to_search'  to query for texts.\nUse '!kktitles text_tp_search'  to find chapter whose title includes the query.\nNOTE: Use ONLY lowercase and AVOID using special characters. Only special character allowed is an Apostrophe ( ' ).\nExample: !kksearch sumi-chan's```")
 		.catch(err => console.error(err));
 
 		}
@@ -84,7 +84,7 @@ client.on('message', message => {
 							
 						if (text.includes(searchString))
 						{
-							results = results.concat('\nChapter ', chapter, ' : ', pageRes);
+							results = results.concat('\nChapter ', chapter, ' : ', text);
 							chapterCount = chapterCount + 1;
 						}
 					}
