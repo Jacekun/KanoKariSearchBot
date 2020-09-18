@@ -128,7 +128,7 @@ client.on('message', message => {
 				  .setColor(0xFF00AE)
 				  .setDescription(msg);
 				 
-				FieldsEmbed.build();
+				FieldsEmbed.build().catch(err => console.error(err));
 				 
 				//message.channel.send(paginationEmbed(msg, embedPages))
 				//.catch(err => console.error(err));
