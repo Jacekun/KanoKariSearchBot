@@ -118,9 +118,9 @@ client.on('message', message => {
 				
 				// send the message
 				var msg = "```Results for search: '" + searchString + "'";
-				paginationEmbed(msg, embedPages);
-				//message.channel.send("```Results for search: '" + searchString + "'\n" + results + "```")
-				//.catch(err => console.error(err));
+				
+				message.channel.send(paginationEmbed(msg, embedPages))
+				.catch(err => console.error(err));
 				console.log("Chapters Result count: " + chapterCount);
 			}
 		}
