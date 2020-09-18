@@ -16,6 +16,7 @@ var JSONObj = JSON.parse(json);
 
 const RESULTS_LIMIT = 2;
 const embedPages = [];
+const toEmbed = [];
 console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
@@ -107,17 +108,23 @@ client.on('message', message => {
 					results = "Nothing found!";
 				}
 				
+				// format embed array
+				forEach (var i=0;  i<embedPages.length; i++)
+				{
+					toEmbed.push({ word: embedPages[i] });
+				}
+				
 				// send the message
 				var msg = "```Results for search: '" + searchString + "'";
 				const FieldsEmbed = new Pagination.FieldsEmbed()
-				  .setArray(embedPages)
+				  .setArray(toEmbed)
 				  .setAuthorizedUsers([message.author.id])
 				  .setChannel(message.channel)
 				  .setElementsPerPage(5)
 				  // Initial page on deploy
 				  .setPage(1)
 				  .setPageIndicator(true)
-				  .formatField('Chapters: ', '');
+				  .formatField('Chapters: ', el => el.word);
 				 
 				FieldsEmbed.embed
 				  .setColor(0xFF00AE)
