@@ -15,7 +15,7 @@ console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 
 const RESULTS_LIMIT = 2;
-var embedPages = [];
+embedPages = [];
 console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
