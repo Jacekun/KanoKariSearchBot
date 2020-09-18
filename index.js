@@ -140,7 +140,7 @@ client.on('message', message => {
 				}
 				else
 				{
-					message.channel.send("No results found! for query: >" + searchString + "<")
+					message.channel.send("```css\nNo results found! for query: >" + searchString + "<```")
 					.catch(err => console.error(err));
 				}
 			}
