@@ -123,7 +123,7 @@ client.on('message', message => {
 					  .setArray(toEmbed)
 					  .setAuthorizedUsers([message.author.id])
 					  .setChannel(message.channel)
-					  .setElementsPerPage(2)
+					  .setElementsPerPage(6)
 					  // Initial page on deploy
 					  .setPage(1)
 					  .setPageIndicator(true)
