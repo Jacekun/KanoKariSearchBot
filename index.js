@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var fs = require("fs");
+console.log('Reading JSON file...');
 var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
+console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
-	//console.log(json);
 	console.log('Ready!');
 });
 
@@ -97,8 +98,9 @@ client.on('message', message => {
 				}
 				
 				// send the message
-				message.channel.send("```Results for search: '" + searchString + "'\nResult count: " + chapterCount + "\n" + results + "```")
+				message.channel.send("```Results for search: '" + searchString + "\n" + results + "```")
 				.catch(err => console.error(err));
+				console.log("'Chapters Result count: " + chapterCount);
 			}
 		}
 	}
