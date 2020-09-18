@@ -4,7 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^12.3.1",
-	"discord.js-pagination": "^1.0.2"
+	"discord-paginationembed": "^2.1.0"
   },
   "devDependencies": {},
   "scripts": {
