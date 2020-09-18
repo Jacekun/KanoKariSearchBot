@@ -100,7 +100,7 @@ client.on('message', message => {
 							if (chapterCount >= RESULTS_LIMIT)
 							{
 								var msgEmbed = new Discord.MessageEmbed();
-								msgEmbed.addField('', results, true);
+								msgEmbed.addField('Results:', results, true);
 								
 								chapterCount = 0;
 								results = '';
