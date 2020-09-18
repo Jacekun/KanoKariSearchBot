@@ -95,14 +95,8 @@ client.on('message', message => {
 							
 						if (text.includes(searchString))
 						{
-							results = results.concat('\nChapter ', chapter, ' : ', text);
-							chapterCount = chapterCount + 1;
-							if (chapterCount >= RESULTS_LIMIT)
-							{
-								chapterCount = 0;
-								results = '';
-								embedPages.push(results);
-							}
+							results = 'Chapter ' + chapter + ' : ' + text;
+							embedPages.push(results);
 						}
 					}
 				}
@@ -119,10 +113,11 @@ client.on('message', message => {
 				  .setArray(embedPages)
 				  .setAuthorizedUsers([message.author.id])
 				  .setChannel(message.channel)
-				  .setElementsPerPage(1)
+				  .setElementsPerPage(5)
 				  // Initial page on deploy
 				  .setPage(1)
-				  .setPageIndicator(true);
+				  .setPageIndicator(true)
+				  .formatField('Chapters: ', '');
 				 
 				FieldsEmbed.embed
 				  .setColor(0xFF00AE)
