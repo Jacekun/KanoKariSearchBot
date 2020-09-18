@@ -112,7 +112,7 @@ client.on('message', message => {
 					// send the message
 					var msg = "Results for search: >" + searchString + "<";
 					const FieldsEmbed = new Pagination.FieldsEmbed()
-					  .setArray(toEmbed)
+					  .setArray(embedPages)
 					  .setAuthorizedUsers([message.author.id])
 					  .setChannel(message.channel)
 					  .setElementsPerPage(6)
