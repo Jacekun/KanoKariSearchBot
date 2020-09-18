@@ -15,7 +15,7 @@ console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 
 var embedPages = [];
-var toEmbed = [];
+
 console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
@@ -48,7 +48,6 @@ client.on('message', message => {
 			var chapterCount = 0;
 			
 			embedPages = [];
-			toEmbed = [];
 			
 			// Is it a search for Chapter titles?
 			if (query.includes('!kktitles'))
@@ -88,7 +87,7 @@ client.on('message', message => {
 						if (pageRes !== "")
 						{
 							results = 'Ch. ' + chapter + ' Pages: ' + pageRes;
-							embedPages.push(results);
+							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;
 						}
 						
@@ -101,7 +100,7 @@ client.on('message', message => {
 						if (text.includes(searchString))
 						{
 							results = 'Ch. ' + chapter + ' : ' + text;
-							embedPages.push(results);
+							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;
 						}
 					}
@@ -110,13 +109,6 @@ client.on('message', message => {
 				// check if there are no results.
 				if (chapterCount > 0)
 				{
-				
-					// format embed array
-					for (var i=0;  i<embedPages.length; i++)
-					{
-						toEmbed.push({ word: embedPages[i] });
-					}
-					
 					// send the message
 					var msg = "Results for search: >" + searchString + "<";
 					const FieldsEmbed = new Pagination.FieldsEmbed()
@@ -134,9 +126,7 @@ client.on('message', message => {
 					  .setDescription(msg);
 					 
 					FieldsEmbed.build().catch(err => console.error(err));
-
-					console.log("Results posted");
-				
+					
 				}
 				else
 				{
