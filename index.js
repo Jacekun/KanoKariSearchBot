@@ -14,8 +14,8 @@ var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
 console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 
-const embedPages = [];
-const toEmbed = [];
+var embedPages = [];
+var toEmbed = [];
 console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
