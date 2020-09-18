@@ -109,7 +109,7 @@ client.on('message', message => {
 				}
 				
 				// format embed array
-				forEach (var i=0;  i<embedPages.length; i++)
+				for (var i=0;  i<embedPages.length; i++)
 				{
 					toEmbed.push({ word: embedPages[i] });
 				}
