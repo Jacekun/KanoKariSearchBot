@@ -39,12 +39,16 @@ client.on('message', message => {
 		// Search for text or chapter titles
 		else if (query.includes('!kksearch') || query.includes('!kktitles'))
 		{
+			// Setup variables
 			var searchForTitle = 0;
 			var results = "";
 			var pageRes = "";
 			var len = query.length - 9;
 			var searchString = query.substr(9, len).trim();
 			var chapterCount = 0;
+			
+			embedPages = [];
+			toEmbed = [];
 			
 			// Is it a search for Chapter titles?
 			if (query.includes('!kktitles'))
