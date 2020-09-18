@@ -1,10 +1,21 @@
+console.log('Getting discord.js....');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+console.log('Getting fs....');
 var fs = require("fs");
+
+console.log('Getting discord.js-pagination....');
+const paginationEmbed = require('discord.js-pagination');
+
 console.log('Reading JSON file...');
 var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
+
 console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
+
+const RESULTS_LIMIT = 2;
+var embedPages = [];
 console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
@@ -28,7 +39,6 @@ client.on('message', message => {
 		// Search for text or chapter titles
 		else if (query.includes('!kksearch') || query.includes('!kktitles'))
 		{
-			
 			var searchForTitle = 0;
 			var results = "";
 			var pageRes = "";
@@ -73,8 +83,8 @@ client.on('message', message => {
 						// Check Results
 						if (pageRes !== "")
 						{
-							results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
 							chapterCount = chapterCount + 1;
+							results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
 						}
 						
 					}
@@ -87,6 +97,15 @@ client.on('message', message => {
 						{
 							results = results.concat('\nChapter ', chapter, ' : ', text);
 							chapterCount = chapterCount + 1;
+							if (chapterCount >= RESULTS_LIMIT)
+							{
+								var msgEmbed = new Discord.MessageEmbed();
+								msgEmbed.addField('', results, true);
+								
+								chapterCount = 0;
+								results = '';
+								embedPages.push(msgEmbed);
+							}
 						}
 					}
 				}
@@ -98,8 +117,10 @@ client.on('message', message => {
 				}
 				
 				// send the message
-				message.channel.send("```Results for search: '" + searchString + "'\n" + results + "```")
-				.catch(err => console.error(err));
+				var msg = "```Results for search: '" + searchString + "'";
+				paginationEmbed(msg, embedPages);
+				//message.channel.send("```Results for search: '" + searchString + "'\n" + results + "```")
+				//.catch(err => console.error(err));
 				console.log("Chapters Result count: " + chapterCount);
 			}
 		}
