@@ -87,7 +87,7 @@ client.on('message', message => {
 						// Check Results
 						if (pageRes !== "")
 						{
-							results = 'Chapter ' + chapter + ' Pages: ' + pageRes;
+							results = 'Ch. ' + chapter + ' Pages: ' + pageRes;
 							embedPages.push(results);
 							chapterCount = chapterCount + 1;
 						}
@@ -100,7 +100,7 @@ client.on('message', message => {
 							
 						if (text.includes(searchString))
 						{
-							results = 'Chapter ' + chapter + ' : ' + text;
+							results = 'Ch. ' + chapter + ' : ' + text;
 							embedPages.push(results);
 							chapterCount = chapterCount + 1;
 						}
