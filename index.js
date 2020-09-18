@@ -98,9 +98,9 @@ client.on('message', message => {
 				}
 				
 				// send the message
-				message.channel.send("```Results for search: '" + searchString + "\n" + results + "```")
+				message.channel.send("```Results for search: '" + searchString + "'\n" + results + "```")
 				.catch(err => console.error(err));
-				console.log("'Chapters Result count: " + chapterCount);
+				console.log("Chapters Result count: " + chapterCount);
 			}
 		}
 	}
