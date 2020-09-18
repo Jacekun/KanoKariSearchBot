@@ -122,24 +122,14 @@ client.on('message', message => {
 				  .setElementsPerPage(1)
 				  // Initial page on deploy
 				  .setPage(1)
-				  .setPageIndicator(true)
-				  .formatField('Results:')
-				  // Deletes the embed upon awaiting timeout
-				  .setDeleteOnTimeout(true)
-				  // Disable built-in navigation emojis, in this case: 🗑 (Delete Embed)
-				  .setDisabledNavigationEmojis(['delete'])
-				  // Sets whether function emojis should be deployed after navigation emojis
-				  .setEmojisFunctionAfterNavigation(false);
+				  .setPageIndicator(true);
 				 
 				FieldsEmbed.embed
 				  .setColor(0xFF00AE)
 				  .setDescription(msg);
 				 
-				await FieldsEmbed.build();
+				FieldsEmbed.build();
 				 
-				// Will not log until the instance finished awaiting user responses
-				// (or techinically emitted either `expire` or `finish` event)
-				console.log('done');
 				//message.channel.send(paginationEmbed(msg, embedPages))
 				//.catch(err => console.error(err));
 				console.log("Chapters Result count: " + chapterCount);
