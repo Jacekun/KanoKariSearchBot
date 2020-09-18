@@ -14,7 +14,6 @@ var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
 console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 
-const RESULTS_LIMIT = 2;
 const embedPages = [];
 const toEmbed = [];
 console.log('Loaded all dependencies!');
@@ -84,8 +83,9 @@ client.on('message', message => {
 						// Check Results
 						if (pageRes !== "")
 						{
+							results = 'Chapter ' + chapter + ' Pages: ' + pageRes;
+							embedPages.push(results);
 							chapterCount = chapterCount + 1;
-							results = results.concat('\nChapter ', chapter, ' Pages: ', pageRes);
 						}
 						
 					}
@@ -98,43 +98,47 @@ client.on('message', message => {
 						{
 							results = 'Chapter ' + chapter + ' : ' + text;
 							embedPages.push(results);
+							chapterCount = chapterCount + 1;
 						}
 					}
 				}
 				
 				// check if there are no results.
-				if (results === "")
+				if (chapterCount > 0)
 				{
-					results = "Nothing found!";
-				}
 				
-				// format embed array
-				for (var i=0;  i<embedPages.length; i++)
+					// format embed array
+					for (var i=0;  i<embedPages.length; i++)
+					{
+						toEmbed.push({ word: embedPages[i] });
+					}
+					
+					// send the message
+					var msg = "Results for search: >" + searchString + "<";
+					const FieldsEmbed = new Pagination.FieldsEmbed()
+					  .setArray(toEmbed)
+					  .setAuthorizedUsers([message.author.id])
+					  .setChannel(message.channel)
+					  .setElementsPerPage(2)
+					  // Initial page on deploy
+					  .setPage(1)
+					  .setPageIndicator(true)
+					  .formatField('Chapters: ', el => el.word);
+					 
+					FieldsEmbed.embed
+					  .setColor(0xFF00AE)
+					  .setDescription(msg);
+					 
+					FieldsEmbed.build().catch(err => console.error(err));
+
+					console.log("Results posted");
+				
+				}
+				else
 				{
-					toEmbed.push({ word: embedPages[i] });
+					message.channel.send("No results found! for query: >" + searchString + "<")
+					.catch(err => console.error(err));
 				}
-				
-				// send the message
-				var msg = "```Results for search: '" + searchString + "'";
-				const FieldsEmbed = new Pagination.FieldsEmbed()
-				  .setArray(toEmbed)
-				  .setAuthorizedUsers([message.author.id])
-				  .setChannel(message.channel)
-				  .setElementsPerPage(5)
-				  // Initial page on deploy
-				  .setPage(1)
-				  .setPageIndicator(true)
-				  .formatField('Chapters: ', el => el.word);
-				 
-				FieldsEmbed.embed
-				  .setColor(0xFF00AE)
-				  .setDescription(msg);
-				 
-				FieldsEmbed.build().catch(err => console.error(err));
-				 
-				//message.channel.send(paginationEmbed(msg, embedPages))
-				//.catch(err => console.error(err));
-				console.log("Chapters Result count: " + chapterCount);
 			}
 		}
 	}
