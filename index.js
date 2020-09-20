@@ -112,7 +112,7 @@ client.on('message', message => {
 				if (chapterCount > 0)
 				{
 					// sort array
-					embedPages.sort();
+					embedPages.sort(function(word.a, word.b){return word.a-word.b});
 					// send the message
 					var msg = "Results for search: >" + searchString + "<";
 					const FieldsEmbed = new Pagination.FieldsEmbed()
