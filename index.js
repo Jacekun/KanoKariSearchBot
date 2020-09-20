@@ -29,28 +29,28 @@ client.on('message', message => {
 	{
 
 		// !help command
-		if (query == '!kkhelp')
+		if (query == ';khelp')
 		{
 
-		message.channel.send("```Use '!kksearch text_to_search'  to query for texts.\nUse '!kktitles text_tp_search'  to find chapter whose title includes the query.\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\nExample: !kksearch sumi-chan's```")
+		message.channel.send("```Use ';ks text_to_search'  to query for texts.\nUse ';kt text_to_search'  to find chapter whose title includes the query.\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\nExample: ;ks sumi-chan's\n\n;khelp will show this message.```")
 		.catch(err => console.error(err));
 
 		}
 		// Search for text or chapter titles
-		else if (query.includes('!kksearch') || query.includes('!kktitles'))
+		else if (query.includes(';ks') || query.includes(';kt`'))
 		{
 			// Setup variables
 			var searchForTitle = 0;
 			var results = "";
 			var pageRes = "";
-			var len = query.length - 9;
-			var searchString = query.substr(9, len).trim().toLowerCase();
+			var len = query.length - 3;
+			var searchString = query.substr(3, len).trim().toLowerCase();
 			var chapterCount = 0;
 			
 			embedPages = [];
 			
 			// Is it a search for Chapter titles?
-			if (query.includes('!kktitles'))
+			if (query.includes(';kt'))
 			{
 				searchForTitle = 1;
 			}
