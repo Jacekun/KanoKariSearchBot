@@ -44,7 +44,7 @@ client.on('message', message => {
 			var results = "";
 			var pageRes = "";
 			var len = query.length - 9;
-			var searchString = query.substr(9, len).trim();
+			var searchString = query.substr(9, len).trim().toLowerCase();
 			var chapterCount = 0;
 			
 			embedPages = [];
@@ -76,7 +76,8 @@ client.on('message', message => {
 
 							if (page !== "0")
 							{
-								if (text.includes(searchString))
+								var textLower = text.toLowerCase();
+								if (textLower.includes(searchString))
 								{
 									pageRes = pageRes.concat(page, ', ');
 								}
@@ -97,8 +98,8 @@ client.on('message', message => {
 					{
 						// Check only chapter 0 for title
 						var text = JSONObj.KK[iChapter].page[0].str;
-							
-						if (text.toLowerCase().includes(searchString.toLowerCase()))
+						var textLower = text.toLowerCase();
+						if (textLower.includes(searchString))
 						{
 							results = 'Ch. ' + chapter + ' : ' + text;
 							embedPages.push({ word: results });
