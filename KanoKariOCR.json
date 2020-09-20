@@ -92,7 +92,7 @@
 		"page":
 		[
 			{"id":"0", "str":"the girlfriend and lies part 5"},
-			{"id":"2", "str":"chizuru cover colored"}
+			{"id":"2", "str":"chizuru cover colored chizuru bikini chizuru swimsuit"}
 		]
 	},
 	{
@@ -128,7 +128,10 @@
 		"chap": "147",
 		"page":
 		[
-			{"id":"0", "str":"the girlfriend and lies part 1"}
+			{"id":"0", "str":"the girlfriend and lies part 1"},
+			{"id":"2", "str":"chizuru cover colored ruka cover colored mami cover colored sumi cover colored"},
+			{"id":"3", "str":"chizuru cover colored"},
+			{"id":"4", "str":"chizuru cover colored ruka cover colored mami cover colored sumi cover colored"}
 		]
 	},
 	{
@@ -166,28 +169,33 @@
 		"chap": "142",
 		"page":
 		[
-			{"id":"0", "str":"the girlfriend and the promise part 4"}
+			{"id":"0", "str":"the girlfriend and the promise part 4"},
+			{"id":"3", "str":"ruka cover"}
 		]
 	},
 	{
 		"chap": "141",
 		"page":
 		[
-			{"id":"0", "str":"the girlfriend and the promise part 3"}
+			{"id":"0", "str":"the girlfriend and the promise part 3"},
+			{"id":"2", "str":"ruka cover colored"},
+			{"id":"3", "str":"chizuru cover colored"}
 		]
 	},
 	{
 		"chap": "140",
 		"page":
 		[
-			{"id":"0", "str":"the girlfriend and the promise part 2"}
+			{"id":"0", "str":"the girlfriend and the promise part 2"},
+			{"id":"3", "str":"ruka cover ruka swimsuit ruka bikini"}
 		]
 	},
 	{
 		"chap": "139",
 		"page":
 		[
-			{"id":"0", "str":"the girlfriend and the promise part 1"}
+			{"id":"0", "str":"the girlfriend and the promise part 1"},
+			{"id":"4", "str":"ruka cover ruka and kazuya cover"}
 		]
 	},
 	{
