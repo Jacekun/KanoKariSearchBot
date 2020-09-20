@@ -98,7 +98,7 @@ client.on('message', message => {
 						// Check only chapter 0 for title
 						var text = JSONObj.KK[iChapter].page[0].str;
 							
-						if (text.includes(searchString))
+						if (text.toLowerCase().includes(searchString.toLowerCase()))
 						{
 							results = 'Ch. ' + chapter + ' : ' + text;
 							embedPages.push({ word: results });
