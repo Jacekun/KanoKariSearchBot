@@ -15,6 +15,8 @@ console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 
 var embedPages = [];
+const cmdSearch = ';ks';
+const cmdTitle = ';kt';
 
 console.log('Loaded all dependencies!');
 
@@ -32,27 +34,29 @@ client.on('message', message => {
 		if (query == ';khelp')
 		{
 
-		message.channel.send("```;ks 'text_to_search'  -> to query for texts.\n;kt 'text_to_search' -> to find chapter whose title includes the query.\n;ks [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: ;ks sumi-chan's\n\n;khelp will show this message.```")
+		message.channel.send("```" + cmdSearch + " 'text_to_search'  -> to query for texts.\n;" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n;" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: " + cmdSearch + " sumi-chan's\n\n;khelp will show this message.```")
 		.catch(err => console.error(err));
 
 		}
 		// Search for text or chapter titles
-		else if (query.includes(';ks') || query.includes(';kt'))
+		else if (query.includes(cmdSearch) || query.includes(cmdTitle))
 		{
 			// Setup variables
 			var searchForTitle = 0;
 			var results = "";
 			var pageRes = "";
-			var len = query.length - 3;
-			var searchString = query.substr(3, len).trim().toLowerCase();
+			var len = query.length - cmdSearch.length;
+			var searchString = query.substr(cmdSearch.length, len).trim().toLowerCase();
 			var chapterCount = 0;
 			
 			embedPages = [];
 			
 			// Is it a search for Chapter titles?
-			if (query.includes(';kt'))
+			if (query.includes(cmdTitle))
 			{
 				searchForTitle = 1;
+				len = query.length - cmdTitle.length;
+				searchString = query.substr(cmdTitle.length, len).trim().toLowerCase();
 			}
 			
 			if (searchString !== "")
