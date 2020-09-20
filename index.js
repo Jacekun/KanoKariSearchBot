@@ -37,7 +37,7 @@ client.on('message', message => {
 
 		}
 		// Search for text or chapter titles
-		else if (query.includes(';ks') || query.includes(';kt`'))
+		else if (query.includes(';ks') || query.includes(';kt'))
 		{
 			// Setup variables
 			var searchForTitle = 0;
