@@ -25,7 +25,7 @@ client.once('ready', () => {
 client.on('message', message => {
 	// received a request
 	var query = message.content;
-	if (query.substr(0, 3) == "!kk")
+	if (query.substr(0, 2) == ";k")
 	{
 
 		// !help command
