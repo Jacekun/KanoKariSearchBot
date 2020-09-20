@@ -86,7 +86,8 @@ client.on('message', message => {
 						// Check Results
 						if (pageRes !== "")
 						{
-							results = 'Ch. ' + chapter + ' Pages: ' + pageRes;
+							pageRes = pageRes.slice(0, -2); 
+							results = 'Ch. ' + chapter + ' | Pages: ' + pageRes;
 							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;
 						}
