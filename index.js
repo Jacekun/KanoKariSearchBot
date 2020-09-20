@@ -111,6 +111,8 @@ client.on('message', message => {
 				// check if there are no results.
 				if (chapterCount > 0)
 				{
+					// sort array
+					embedPages.sort();
 					// send the message
 					var msg = "Results for search: >" + searchString + "<";
 					const FieldsEmbed = new Pagination.FieldsEmbed()
