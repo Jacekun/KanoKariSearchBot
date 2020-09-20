@@ -32,7 +32,7 @@ client.on('message', message => {
 		if (query == ';khelp')
 		{
 
-		message.channel.send("```Use ';ks text_to_search'  to query for texts.\nUse ';kt text_to_search'  to find chapter whose title includes the query.\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\nExample: ;ks sumi-chan's\n\n;khelp will show this message.```")
+		message.channel.send("```;ks 'text_to_search'  -> to query for texts.\n;kt 'text_to_search' -> to find chapter whose title includes the query.\n;ks [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\nExample: ;ks sumi-chan's\n\n;khelp will show this message.```")
 		.catch(err => console.error(err));
 
 		}
