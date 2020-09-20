@@ -17,6 +17,7 @@ var JSONObj = JSON.parse(json);
 var embedPages = [];
 const cmdSearch = ';ks';
 const cmdTitle = ';kt';
+const cmdHelp = ';khelp';
 
 console.log('Loaded all dependencies!');
 
@@ -31,10 +32,10 @@ client.on('message', message => {
 	{
 
 		// !help command
-		if (query == ';khelp')
+		if (query == cmdHelp)
 		{
 
-		message.channel.send("```" + cmdSearch + " 'text_to_search'  -> to query for texts.\n;" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n;" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: " + cmdSearch + " sumi-chan's\n\n;khelp will show this message.```")
+		message.channel.send("```" + cmdSearch + " 'text_to_search'  -> to query for texts.\n" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: > " + cmdSearch + " sumi-chan's <\n\n" + cmdHelp + " will show this message.```")
 		.catch(err => console.error(err));
 
 		}
@@ -92,7 +93,7 @@ client.on('message', message => {
 						if (pageRes !== "")
 						{
 							pageRes = pageRes.slice(0, -2); 
-							results = 'Ch. ' + chapter + ' | Pages: ' + pageRes;
+							results = 'Ch. ' + chapter + ' | Page: ' + pageRes;
 							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;
 						}
@@ -120,7 +121,7 @@ client.on('message', message => {
 						return a.word - b.word;
 					});
 					// send the message
-					var msg = "Results for search: >" + searchString + "<";
+					var msg = "Results for search: > " + searchString + " <";
 					const FieldsEmbed = new Pagination.FieldsEmbed()
 					  .setArray(embedPages)
 					  .setAuthorizedUsers([message.author.id])
