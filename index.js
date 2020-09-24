@@ -36,7 +36,7 @@ client.on('message', message => {
 		if (query == cmdHelp)
 		{
 
-		message.channel.send("```" + cmdSearch + " 'text_to_search'  -> to query for texts.\n" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: > " + cmdSearch + " sumi-chan's <\n\n" + cmdHelp + " will show this message.```")
+		message.channel.send("```" + cmdSearch + " 'text_to_search'  -> to query for texts.\n" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: > " + cmdSearch + " sumi-chan's <\n\n" + cmdHelp + " will show this message.```")
 		.catch(err => console.error(err));
 
 		}
