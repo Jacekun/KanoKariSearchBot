@@ -117,7 +117,7 @@ client.on('message', message => {
 				if (chapterCount > 0)
 				{
 					// sort array
-					embedPages.sort(function(a, b) {
+					embedPages = embedPages.sort(function(a, b) {
 						return a.word - b.word;
 					});
 					// send the message
