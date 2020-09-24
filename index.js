@@ -14,6 +14,7 @@ var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
 console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
 
+console.log('Creating variables...');
 var embedPages = [];
 const cmdSearch = ';ks';
 const cmdTitle = ';kt';
@@ -35,7 +36,7 @@ client.on('message', message => {
 		if (query == cmdHelp)
 		{
 
-		message.channel.send("```css\n" + cmdSearch + " 'text_to_search'  -> to query for texts.\n" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: > " + cmdSearch + " sumi-chan's <\n\n" + cmdHelp + " will show this message.```")
+		message.channel.send("```" + cmdSearch + " 'text_to_search'  -> to query for texts.\n" + cmdTitle + " 'text_to_search' -> to find chapter whose title includes the query.\n" + cmdSearch + " [sumi, chizuru, ruka, mami] cover [colored] -> displays the pages of the covers\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ).\n\nExample: > " + cmdSearch + " sumi-chan's <\n\n" + cmdHelp + " will show this message.```")
 		.catch(err => console.error(err));
 
 		}
@@ -81,8 +82,7 @@ client.on('message', message => {
 
 							if (page !== "0")
 							{
-								var textLower = text.toLowerCase();
-								if (textLower.includes(searchString))
+								if (text.includes(searchString))
 								{
 									pageRes = pageRes.concat(page, ', ');
 								}
