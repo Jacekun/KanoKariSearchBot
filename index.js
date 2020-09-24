@@ -61,7 +61,7 @@ client.on('message', message => {
 				searchString = query.substr(cmdTitle.length, len).trim().toLowerCase();
 			}
 			
-			if (searchString !== "")
+			if (searchString !== "" && searchString.length > 3)
 			{
 				
 				// Iterate through every chapter
@@ -116,10 +116,6 @@ client.on('message', message => {
 				// check if there are no results.
 				if (chapterCount > 0)
 				{
-					// sort array
-					embedPages = embedPages.sort(function(a, b) {
-						return a.word - b.word;
-					});
 					// send the message
 					var msg = "Results for search: > " + searchString + " <";
 					const FieldsEmbed = new Pagination.FieldsEmbed()
