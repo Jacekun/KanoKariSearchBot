@@ -103,7 +103,7 @@ client.on('message', message => {
 					{
 						// Check only chapter 0 for title
 						var text = JSONObj.KK[iChapter].page[0].str;
-						var textLower = text.toLowerCase();
+						var textLower = text.toLowerCase().replace(",", "");
 						if (textLower.includes(searchString))
 						{
 							results = 'Ch. ' + chapter + ' : ' + text;
