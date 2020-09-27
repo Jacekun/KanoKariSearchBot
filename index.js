@@ -2,11 +2,11 @@ console.log('Getting discord.js....');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+console.log('Creating MessageEmbed....');
+const { MessageEmbed } = require('discord.js');
+
 console.log('Getting fs....');
 var fs = require("fs");
-
-console.log('Getting discord.js-paginationembed....');
-const Pagination = require('discord-paginationembed');
 
 console.log('Reading JSON file...');
 var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
@@ -26,7 +26,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', message => {
+client.on('message', async message => {
 	// received a request
 	var query = message.content;
 	if (query.substr(0, 2) == ";k")
@@ -113,27 +113,48 @@ client.on('message', message => {
 					}
 				}
 				
-				// check if there are no results.
+				// check if there are results
 				if (chapterCount > 0)
 				{
 					// send the message
-					var msg = "Results for search: > " + searchString + " <";
-					const FieldsEmbed = new Pagination.FieldsEmbed()
-					  .setArray(embedPages)
-					  .setAuthorizedUsers([message.author.id])
-					  .setChannel(message.channel)
-					  .setElementsPerPage(6)
-					  // Initial page on deploy
-					  .setPage(1)
-					  .setPageIndicator(true)
-					  .formatField('Chapters: ', el => el.word);
-					 
-					FieldsEmbed.embed
-					  .setColor(0xFF00AE)
-					  .setDescription(msg);
-					 
-					FieldsEmbed.build().catch(err => console.error(err));
+					let currentPage = 0;
+					const embeds = generatePaginatedMsg(embedPages, searchString);
+					console.log(`Length of embed (page count): ${embeds.length}\nTotal chapter results: ${chapterCount}`);
 					
+					const queueEmbed = await message.channel.send(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
+					await queueEmbed.react('⬅️');
+					await queueEmbed.react('➡️');
+					await queueEmbed.react('❌');
+					
+					const filter = (reaction, user) => ['⬅️', '➡️', '❌'].includes(reaction.emoji.name) && (message.author.id === user.id);
+					const collector = queueEmbed.createReactionCollector(filter);
+					
+					collector.on('collect', async (reaction, user) =>
+					{
+						if (reaction.emoji.name === '⬅️')
+						{
+							if (currentPage !== 0)
+							{
+								--currentPage;
+								queueEmbed.edit(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
+							}
+						}
+						else if (reaction.emoji.name === '➡️')
+						{
+							if (currentPage < embeds.length-1)
+							{
+								currentPage++;
+								queueEmbed.edit(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
+							}
+						}
+						else
+						{
+							collector.stop();
+							console.log("Deleted the Results embeds!");
+							await queueEmbed.delete();
+						}
+						reaction.users.remove(user);
+					} );
 				}
 				else
 				{
@@ -146,3 +167,21 @@ client.on('message', message => {
 });
 
 client.login(process.env.BOT_TOKEN);
+
+function generatePaginatedMsg(queue, query)
+{
+	const embeds = 	[];
+	let k = 5;
+	for (let i=0; i<queue.length; i += 5)
+	{
+		const current = queue.slice(i, k);
+		let j = i;
+		k += 5;
+		const info = current.map(obj => obj.word).join('\n');
+		const embed = new MessageEmbed()
+			.setDescription(`Search results for query : **${query}**\n${info}`)
+			.setColor(0x226BDD);
+		embeds.push(embed);
+	}
+	return embeds;
+}

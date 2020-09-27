@@ -3,8 +3,7 @@
   "description": "Search for Manga chapter and pages for the KanoKari series.",
   "main": "index.js",
   "dependencies": {
-    "discord.js": "^12.3.1",
-	"discord-paginationembed": "^2.1.0"
+    "discord.js": "^12.3.1"
   },
   "devDependencies": {},
   "scripts": {
