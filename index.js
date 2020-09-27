@@ -35,7 +35,7 @@ client.on('message', async message => {
 		// !help command
 		if (query == cmdHelp)
 		{
-		var textHelp = `**${cmdSearch} 'text_to_search'**  -> to query for texts.\n **${cmdSearch} [sumi, chizuru, ruka, mami] cover [colored]** -> displays the pages of the covers\n**${cmdTitle} 'text_to_search'** -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch} sumi-chan's**\n\n**${cmdHelp}** will show this message.`;
+		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n **${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
 			.setColor(0x226BDD);
@@ -73,6 +73,7 @@ client.on('message', async message => {
 					
 					pageRes = "";
 					var chapter = JSONObj.KK[iChapter].chap;
+					var link = JSONObj.KK[iChapter].link;
 					
 					// Check if looking through all chapters
 					if (searchForTitle < 1)
@@ -96,7 +97,7 @@ client.on('message', async message => {
 						if (pageRes !== "")
 						{
 							pageRes = pageRes.slice(0, -2); 
-							results = 'Ch. ' + chapter + ' | Page: ' + pageRes;
+							results = `[Ch. ${chapter}](${link}) | Page: ${pageRes}`;
 							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;
 						}
@@ -109,7 +110,7 @@ client.on('message', async message => {
 						var textLower = text.toLowerCase().replace(",", "");
 						if (textLower.includes(searchString))
 						{
-							results = 'Ch. ' + chapter + ' : ' + text;
+							results = `[Ch. ${chapter}](${link}) : ${text}`;
 							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;
 						}
