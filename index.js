@@ -19,6 +19,7 @@ var embedPages = [];
 const cmdSearch = ';ks';
 const cmdTitle = ';kt';
 const cmdHelp = ';khelp';
+const EMBEDColor = 0x155A1B;
 
 console.log('Loaded all dependencies!');
 
@@ -38,7 +39,7 @@ client.on('message', async message => {
 		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n **${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
-			.setColor(0x226BDD);
+			.setColor(EMBEDColor);
 		message.channel.send('How to use?', helpEmbed)
 		.catch(err => console.error(err));
 
@@ -64,7 +65,10 @@ client.on('message', async message => {
 				searchString = query.substr(cmdTitle.length, len).trim().toLowerCase();
 			}
 			
-			if (searchString !== "" && searchString.length > 3)
+			// Remove newlines
+			searchString = searchString.replace(/\n/g, " ");
+			
+			if (searchString !== "" && searchString.length > 2)
 			{
 				
 				// Iterate through every chapter
@@ -88,12 +92,13 @@ client.on('message', async message => {
 							{
 								if (text.includes(searchString))
 								{
-									pageRes = pageRes.concat(page, ', ');
+									var pageLink = `[${page}](${link}/${page})`;
+									pageRes = pageRes.concat(pageLink, ', ');
 								}
 							}
 						}
 						
-						// Check Results
+						// Check All pages Results
 						if (pageRes !== "")
 						{
 							pageRes = pageRes.slice(0, -2); 
@@ -155,14 +160,17 @@ client.on('message', async message => {
 						{
 							collector.stop();
 							console.log("Deleted the Results embeds!");
-							await queueEmbed.delete();
+							await queueEmbed.delete().catch(err => console.error(err));
 						}
 						reaction.users.remove(user);
 					} );
 				}
 				else
 				{
-					message.channel.send("```css\nNo results found! for query: > " + searchString + " <```")
+					const noresEmbed = new MessageEmbed()
+						.setDescription(`No results found for query: [ **${searchString} ]**`)
+						.setColor(EMBEDColor);
+					message.channel.send('', noresEmbed)
 					.catch(err => console.error(err));
 				}
 			}
@@ -184,7 +192,7 @@ function generatePaginatedMsg(queue, query)
 		const info = current.map(obj => obj.word).join('\n');
 		const embed = new MessageEmbed()
 			.setDescription(`Search results for query : **${query}**\n${info}`)
-			.setColor(0x226BDD);
+			.setColor(EMBEDColor);
 		embeds.push(embed);
 	}
 	return embeds;
