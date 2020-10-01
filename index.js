@@ -36,7 +36,7 @@ client.on('message', async message => {
 		// !help command
 		if (query == cmdHelp)
 		{
-		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n **${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.`;
+		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
 			.setColor(EMBEDColor);
@@ -55,7 +55,7 @@ client.on('message', async message => {
 			var searchString = query.substr(cmdSearch.length, len).trim().toLowerCase();
 			var chapterCount = 0;
 			
-			embedPages = [];
+			embedPages = []; // reset embedPages obj array
 			
 			// Is it a search for Chapter titles?
 			if (query.includes(cmdTitle))
@@ -67,7 +67,7 @@ client.on('message', async message => {
 			
 			// Remove newlines
 			searchString = searchString.replace(/\n/g, " ");
-			
+			console.log(`User: ${message.author.username} (${message.author}), Query: ${searchString}`);
 			if (searchString !== "" && searchString.length > 2)
 			{
 				
@@ -101,7 +101,9 @@ client.on('message', async message => {
 						// Check All pages Results
 						if (pageRes !== "")
 						{
-							pageRes = pageRes.slice(0, -2); 
+							// remove last comma
+							pageRes = pageRes.slice(0, -2);
+							// Push the result to obj array
 							results = `[Ch. ${chapter}](${link}) | Page: ${pageRes}`;
 							embedPages.push({ word: results });
 							chapterCount = chapterCount + 1;

@@ -1,6 +1,8 @@
 # KanoKariSearchBot
 Discord Bot written in Javascript that searches for text in the Manga series KanoKari and tells the Chapter and Pages the query is located in.
 
+*View Project History here* : [**HISTORY**](/HISTORY.md)
+
 # Invite Link to Discord
 
 [**Click here to open link**](https://discordapp.com/api/oauth2/authorize?client_id=753546821573541919&scope=bot&permissions=75840)

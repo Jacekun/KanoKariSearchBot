@@ -1,5 +1,13 @@
 # KanoKari Search Discord Bot
 
+# Version 1.1.1
+  **Changes to Bot:**
+  - Added some comments.
+	
+  **Changes to [KanoKariOCR.json] File:**
+  - Added missing texts for cover infos.
+  - Added **Ch. 158** -> Title, Contents, Link, and Cover info.
+	
 # Version 1.1.0
   **Changes to Bot:**
   - Reduced allowed word lengths to **[3]**.
