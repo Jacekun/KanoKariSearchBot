@@ -1,5 +1,16 @@
 # KanoKari Search Discord Bot
 
+# Version 1.2.0
+  **Changes to Bot:**
+  - Added new command -> **;kextra**.
+    - Shows all **.x** (extra) chapters, *where x is a number*.
+  - If chapter results is 6, don't add additional page.
+	
+  **Changes to [KanoKariOCR.json] File:**
+  - Added missing texts for cover infos.
+    - Chapters: 6-8, 12-17
+  - Added **Ch. 67** -> Incomplete contents.
+
 # Version 1.1.1
   **Changes to Bot:**
   - Added some comments.

@@ -19,6 +19,7 @@ var embedPages = [];
 const cmdSearch = ';ks';
 const cmdTitle = ';kt';
 const cmdHelp = ';khelp';
+const cmdExtra = ";kextra";
 const EMBEDColor = 0x155A1B;
 
 console.log('Loaded all dependencies!');
@@ -45,7 +46,7 @@ client.on('message', async message => {
 
 		}
 		// Search for text or chapter titles
-		else if (query.includes(cmdSearch) || query.includes(cmdTitle))
+		else if ((query.substr(0, cmdSearch.length)===cmdSearch) || (query.substr(0, cmdTitle.length)===cmdTitle) || (query === cmdExtra))
 		{
 			// Setup variables
 			var searchForTitle = 0;
@@ -57,8 +58,8 @@ client.on('message', async message => {
 			
 			embedPages = []; // reset embedPages obj array
 			
-			// Is it a search for Chapter titles?
-			if (query.includes(cmdTitle))
+			// Search only on titles...Useful for chapter title search
+			if ((query.substr(0, cmdTitle.length) === cmdTitle) || (query === cmdExtra))
 			{
 				searchForTitle = 1;
 				len = query.length - cmdTitle.length;
@@ -67,7 +68,11 @@ client.on('message', async message => {
 			
 			// Remove newlines
 			searchString = searchString.replace(/\n/g, " ");
-			console.log(`User: ${message.author.username} (${message.author}), Query: ${searchString}`);
+			console.log(`User: ${message.author.username} (${message.author}), Query: [ ${query} ]`);
+			
+			// Declare the title (desc) of the search results
+			var desc = `Search results for query : **${searchString}**`;
+			
 			if (searchString !== "" && searchString.length > 2)
 			{
 				
@@ -114,12 +119,27 @@ client.on('message', async message => {
 					{
 						// Check only chapter 0 for title
 						var text = JSONObj.KK[iChapter].page[0].str;
-						var textLower = text.toLowerCase().replace(",", "");
-						if (textLower.includes(searchString))
+						
+						if (query === cmdExtra)
 						{
-							results = `[Ch. ${chapter}](${link}) : ${text}`;
-							embedPages.push({ word: results });
-							chapterCount = chapterCount + 1;
+							desc = "**Extra chapters**";
+							if (chapter.includes("."))
+							{
+								results = `[Ch. ${chapter}](${link}) : ${text}`;
+								embedPages.push({ word: results });
+								chapterCount = chapterCount + 1;
+							}
+						}
+						else
+						{
+							var textLower = text.toLowerCase().replace(",", "");
+							if (textLower.includes(searchString))
+							{
+								results = `[Ch. ${chapter}](${link}) : ${text}`;
+								embedPages.push({ word: results });
+								chapterCount = chapterCount + 1;
+							}
+
 						}
 					}
 				}
@@ -129,7 +149,8 @@ client.on('message', async message => {
 				{
 					// send the message
 					let currentPage = 0;
-					const embeds = generatePaginatedMsg(embedPages, searchString);
+					
+					const embeds = generatePaginatedMsg(embedPages, desc);
 					console.log(`Length of embed (page count): ${embeds.length}\nTotal chapter results: ${chapterCount}`);
 					
 					const queueEmbed = await message.channel.send(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
@@ -182,18 +203,23 @@ client.on('message', async message => {
 
 client.login(process.env.BOT_TOKEN);
 
-function generatePaginatedMsg(queue, query)
+function generatePaginatedMsg(queue, desc)
 {
+	var maxPP = 5;
+	if (queue.length == 6)
+	{
+		maxPP = 6;
+	}
 	const embeds = 	[];
-	let k = 5;
-	for (let i=0; i<queue.length; i += 5)
+	let k = maxPP;
+	for (let i=0; i<queue.length; i += maxPP)
 	{
 		const current = queue.slice(i, k);
 		let j = i;
-		k += 5;
+		k += maxPP;
 		const info = current.map(obj => obj.word).join('\n');
 		const embed = new MessageEmbed()
-			.setDescription(`Search results for query : **${query}**\n${info}`)
+			.setDescription(`${desc}\n${info}`)
 			.setColor(EMBEDColor);
 		embeds.push(embed);
 	}
