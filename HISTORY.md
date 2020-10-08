@@ -1,5 +1,13 @@
 # KanoKari Search Discord Bot
 
+# Version 1.2.1
+  **Changes to Bot:**
+  - Added **;kextra** to **help** command.
+	
+  **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 159** -> Title, Contents, Link, and Cover info.
+  - Completed **Ch. 67** -> Contents and Cover info.
+
 # Version 1.2.0
   **Changes to Bot:**
   - Added new command -> **;kextra**.

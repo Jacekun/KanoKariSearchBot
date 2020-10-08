@@ -16,6 +16,7 @@ var JSONObj = JSON.parse(json);
 
 console.log('Creating variables...');
 var embedPages = [];
+const cmdPrefix = ";k";
 const cmdSearch = ';ks';
 const cmdTitle = ';kt';
 const cmdHelp = ';khelp';
@@ -31,13 +32,13 @@ client.once('ready', () => {
 client.on('message', async message => {
 	// received a request
 	var query = message.content;
-	if (query.substr(0, 2) == ";k")
+	if (query.substr(0, cmdPrefix.length) == cmdPrefix)
 	{
 
 		// !help command
 		if (query == cmdHelp)
 		{
-		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.`;
+		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.\n**${cmdExtra}** -> will show extra chapters.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
 			.setColor(EMBEDColor);
