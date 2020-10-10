@@ -16,3 +16,18 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 - *Chapter Page* with id **0** is the title of the chapter.
 - No line breaks. All strings must be seperated by **spaces only**.
 - Top most array is the latest chapter.
+
+# Credits
+
+**NOTE: Credits goes first to fansubs and scanlators who worked on the series.**
+
+## Transcription :
+- Me
+	- Ch. 154 - 159
+- [lapis (provider)](https://discordhub.com/profile/377748624337272836)
+	- Ch. 001 - 153
+	
+## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
+- Me
+	- Ch. 049 - 067
+	- Ch. 154 - 159
