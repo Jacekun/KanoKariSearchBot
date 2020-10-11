@@ -1,5 +1,13 @@
 # KanoKari Search Discord Bot
 
+# Version 1.3.0
+  **Changes to Bot:**
+  - Added Chapter result count on Paginator.
+  - Removed Next/Prev reactions for single page results.
+	
+  **Changes to [KanoKariOCR.json] File:**
+  - Fixed spelling mistakes.
+
 # Version 1.2.2
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 49 - 66** -> Contents.

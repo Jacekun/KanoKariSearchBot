@@ -38,7 +38,7 @@ client.on('message', async message => {
 		// !help command
 		if (query == cmdHelp)
 		{
-		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami] cover [colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.\n**${cmdExtra}** -> will show extra chapters.`;
+		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami]* cover *[colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.\n**${cmdExtra}** -> will show extra chapters.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
 			.setColor(EMBEDColor);
@@ -123,13 +123,13 @@ client.on('message', async message => {
 						
 						if (query === cmdExtra)
 						{
-							desc = "**Extra chapters**";
 							if (chapter.includes("."))
 							{
 								results = `[Ch. ${chapter}](${link}) : ${text}`;
 								embedPages.push({ word: results });
 								chapterCount = chapterCount + 1;
 							}
+							desc = `**Extra chapters** [ Count: **${chapterCount}** ]`;
 						}
 						else
 						{
@@ -148,49 +148,72 @@ client.on('message', async message => {
 				// check if there are results
 				if (chapterCount > 0)
 				{
-					// send the message
+					// make the embed
 					let currentPage = 0;
 					
 					const embeds = generatePaginatedMsg(embedPages, desc);
 					console.log(`Length of embed (page count): ${embeds.length}\nTotal chapter results: ${chapterCount}`);
 					
-					const queueEmbed = await message.channel.send(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
-					await queueEmbed.react('⬅️');
-					await queueEmbed.react('➡️');
+					// send message
+					const queueEmbed = await message.channel.send(pageString(currentPage+1, embeds.length, chapterCount), embeds[currentPage]);
+					
+					// Add paginator, if it exceeds 1 page
+					if (chapterCount > 6)
+					{
+						await queueEmbed.react('⬅️');
+						await queueEmbed.react('➡️');
+					}
 					await queueEmbed.react('❌');
 					
+					// add reaction methods, and reaction collector
 					const filter = (reaction, user) => ['⬅️', '➡️', '❌'].includes(reaction.emoji.name) && (message.author.id === user.id);
 					const collector = queueEmbed.createReactionCollector(filter);
 					
 					collector.on('collect', async (reaction, user) =>
 					{
-						if (reaction.emoji.name === '⬅️')
+						// Add paginator, if it exceeds 1 page
+						if (chapterCount > 6)
 						{
-							if (currentPage !== 0)
+							if (reaction.emoji.name === '⬅️')
 							{
-								--currentPage;
-								queueEmbed.edit(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
+								if (currentPage !== 0)
+								{
+									--currentPage;
+									queueEmbed.edit(pageString(currentPage+1, embeds.length, chapterCount), embeds[currentPage]);
+								}
+								reaction.users.remove(user);
 							}
-						}
-						else if (reaction.emoji.name === '➡️')
-						{
-							if (currentPage < embeds.length-1)
+							else if (reaction.emoji.name === '➡️')
 							{
-								currentPage++;
-								queueEmbed.edit(`Current Page : ${currentPage+1}/${embeds.length}`, embeds[currentPage]);
+								if (currentPage < embeds.length-1)
+								{
+									currentPage++;
+									queueEmbed.edit(pageString(currentPage+1, embeds.length, chapterCount), embeds[currentPage]);
+								}
+								reaction.users.remove(user);
+							}
+							else if (reaction.emoji.name === '❌')
+							{
+								collector.stop();
+								console.log("Deleted the Results embeds!");
+								await queueEmbed.delete().catch(err => console.error(err));
 							}
 						}
 						else
 						{
-							collector.stop();
-							console.log("Deleted the Results embeds!");
-							await queueEmbed.delete().catch(err => console.error(err));
+							if (reaction.emoji.name === '❌')
+							{
+								collector.stop();
+								console.log("Deleted the Results embeds!");
+								await queueEmbed.delete().catch(err => console.error(err));
+							}
 						}
-						reaction.users.remove(user);
 					} );
 				}
 				else
 				{
+					// no results
+					console.log(`No results for query: ${searchString}`);
 					const noresEmbed = new MessageEmbed()
 						.setDescription(`No results found for query: [ **${searchString} ]**`)
 						.setColor(EMBEDColor);
@@ -225,4 +248,9 @@ function generatePaginatedMsg(queue, desc)
 		embeds.push(embed);
 	}
 	return embeds;
+}
+
+function pageString(current, max, chapterCount)
+{
+	return `**Current Page : ${current}/${max}** - ( **${chapterCount}** )`;
 }
