@@ -2,6 +2,13 @@
 
 # Version 1.3.0
   **Changes to Bot:**
+  - 
+	
+  **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 138 - 153** -> Contents.
+
+# Version 1.3.0
+  **Changes to Bot:**
   - Added Chapter result count on Paginator.
   - Removed Next/Prev reactions for single page results.
 	
