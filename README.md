@@ -31,3 +31,6 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 - Me
 	- Ch. 049 - 067
 	- Ch. 138 - 160
+	
+## Proofreading:
+- Me
