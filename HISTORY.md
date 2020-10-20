@@ -1,5 +1,12 @@
 # KanoKari Search Discord Bot
 
+# Version 1.4.0
+  **Changes to Bot:**
+  - Update **'help'** message.
+  
+  **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 84 - 102, 119 - 137** -> Contents.
+
 # Version 1.3.1
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 138 - 153** -> Contents.
