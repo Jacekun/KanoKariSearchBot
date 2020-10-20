@@ -41,8 +41,11 @@ client.on('message', async message => {
 		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami]* cover *[colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.\n**${cmdExtra}** -> will show extra chapters.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
-			.setColor(EMBEDColor);
-		message.channel.send('How to use?', helpEmbed)
+			.setColor(EMBEDColor)
+			.setTitle("How to Use?")
+			.addField("Link:", "[Click to View Project on Github](https://github.com/Jacekun/KanoKariSearchBot)");
+			
+		message.channel.send('', helpEmbed)
 		.catch(err => console.error(err));
 
 		}
