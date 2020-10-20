@@ -30,4 +30,8 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
 	- Ch. 049 - 067
-	- Ch. 138 - 160
+    - Ch. 084 - 102
+	- Ch. 119 - 160
+	
+## Proofreading:
+- Me
