@@ -3,9 +3,8 @@
 # Version 1.5.0
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 160.5** -> Title, Contents, Link, and Cover info.
-  - Added **Ch. 84 - 102** -> Contents.
-  - Fixed Spelling mistakes.
   - Added some missing texts.
+  - Fixed Spelling mistakes.
 
 # Version 1.4.0
   **Changes to Bot:**
