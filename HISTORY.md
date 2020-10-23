@@ -1,11 +1,19 @@
 # KanoKari Search Discord Bot
 
+# Version 1.5.0
+  **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 160.5** -> Title, Contents, Link, and Cover info.
+  - Added **Ch. 68 - 83** -> Contents.
+  - Added some missing texts.
+  - Fixed Spelling mistakes.
+
 # Version 1.4.0
   **Changes to Bot:**
-  - Update **'help'** message.
+  - Updated **'help'** message.
   
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 84 - 102, 119 - 137** -> Contents.
+  - Fixed Spelling mistakes.
 
 # Version 1.3.1
   **Changes to [KanoKariOCR.json] File:**
