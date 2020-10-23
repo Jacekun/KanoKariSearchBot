@@ -21,15 +21,14 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 
 ## Transcription :
 - Me
-	- Ch. 154 - 160
+	- Ch. 154 - 160.5
 - [lapis (provider)](https://discordhub.com/profile/377748624337272836)
 	- Ch. 001 - 153
 	
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
-	- Ch. 049 - 067
-    - Ch. 084 - 102
-	- Ch. 119 - 160
+    - Ch. 049 - 102
+	- Ch. 119 - 160.5
 	
 ## Proofreading:
 - Me

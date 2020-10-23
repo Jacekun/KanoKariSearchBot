@@ -1,5 +1,7 @@
 # KanoKari Search Discord Bot
 
+# Version 1.6.0
+
 # Version 1.5.0
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 160.5** -> Title, Contents, Link, and Cover info.
