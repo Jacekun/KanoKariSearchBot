@@ -78,7 +78,7 @@ client.on('message', async message => {
 			var desc = `Search results for query : **${searchString}**`;
 			
 			// Create Regex Exp
-			var searchRegex = new RegExp(searchString, "i");
+			var searchRegex = new RegExp(`\\b${searchString}\\b`, "i");
 			console.log(`Regex Exp: ${searchRegex}`);
 			
 			if (searchString !== "" && searchString.length > 2)

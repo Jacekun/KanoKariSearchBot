@@ -1,6 +1,11 @@
 # KanoKari Search Discord Bot
 
 # Version 1.6.0
+  **Changes to Bot:**
+  - Changed **searching** from **'.include'** -> **'Regex Expression'**.
+    - This makes the search results more accurate.
+	- For example: searching for **tea** returns **'darjeeling tea'**, but not **'teacher'**.
+  
   **Changes to [KanoKariOCR.json] File:**
   - Removed **'** from words, *except in possessive words*.
   
