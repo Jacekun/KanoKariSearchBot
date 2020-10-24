@@ -77,6 +77,10 @@ client.on('message', async message => {
 			// Declare the title (desc) of the search results
 			var desc = `Search results for query : **${searchString}**`;
 			
+			// Create Regex Exp
+			var searchRegex = new RegExp(searchString, "i");
+			console.log(`Regex Exp: ${searchRegex}`);
+			
 			if (searchString !== "" && searchString.length > 2)
 			{
 				
@@ -99,7 +103,7 @@ client.on('message', async message => {
 
 							if (page !== "0")
 							{
-								if (text.includes(searchString))
+								if (searchRegex.test(text))
 								{
 									var pageLink = `[${page}](${link}/${page})`;
 									pageRes = pageRes.concat(pageLink, ', ');
