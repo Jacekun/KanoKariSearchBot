@@ -5,6 +5,7 @@
   - Changed **searching** from **'.include'** -> **'Regex Expression'**.
     - This makes the search results more accurate.
 	- For example: searching for **tea** returns **'darjeeling tea'**, but not **'teacher'**.
+  - Moved **Current Page** text to be included in **MessageEmbed**.
   
   **Changes to [KanoKariOCR.json] File:**
   - Removed **'** from words, *except in possessive words*.
