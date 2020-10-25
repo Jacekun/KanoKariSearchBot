@@ -32,3 +32,5 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 	
 ## Proofreading:
 - Me
+- [Cloak]()
+- [guardianofbooks]()
