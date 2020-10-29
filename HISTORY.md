@@ -8,8 +8,8 @@
   - Moved **Current Page** text to be included in **MessageEmbed**.
   
   **Changes to [KanoKariOCR.json] File:**
-  - Added **Ch. 28 - 32** -> Contents.
-  - Added **Extra Ch.: 32.5, 32.6** -> Contents.
+  - Added **Ch. 28 - 48** -> Contents.
+  - Added **Extra Ch.: 32.5, 32.6, 41.5** -> Contents.
   - Removed [ **'** ] from words, *except in possessive words*.
   
 # Version 1.5.0
