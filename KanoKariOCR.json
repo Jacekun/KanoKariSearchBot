@@ -3595,10 +3595,9 @@
 		"page":
 		[
 			{"id":"0", "str":"The Girlfriend and Her Part 3"},
-			{"id":"3", "str":"ruka colored panel"},
 			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
-			{"id":"3", "str":"sample"},
+			{"id":"3", "str":"ruka colored panel"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
 			{"id":"6", "str":"sample"},
@@ -3746,10 +3745,9 @@
 		"page":
 		[
 			{"id":"0", "str":"The Girlfriend and The Onsen Part 1"},
-			{"id":"3", "str":"chizuru cover chizuru in present box"},
 			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
-			{"id":"3", "str":"sample"},
+			{"id":"3", "str":"chizuru cover chizuru in present box"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
 			{"id":"6", "str":"sample"},
@@ -3777,10 +3775,9 @@
 		"page":
 		[
 			{"id":"0", "str":"The Girlfriend and Impulse"},
-			{"id":"3", "str":"chizuru cover dive for smile"},
 			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
-			{"id":"3", "str":"sample"},
+			{"id":"3", "str":"chizuru cover dive for smile"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
 			{"id":"6", "str":"sample"},
@@ -3808,10 +3805,9 @@
 		"page":
 		[
 			{"id":"0", "str":"The Girlfriend and The Sea Part 2"},
-			{"id":"3", "str":"chizuru cover chizuru almost drown haa haa"},
 			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
-			{"id":"3", "str":"sample"},
+			{"id":"3", "str":"chizuru cover chizuru almost drown haa haa"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
 			{"id":"6", "str":"sample"},
@@ -3869,11 +3865,9 @@
 		"page":
 		[
 			{"id":"0", "str":"The Girlfriend and The Sea Part 1"},
-			{"id":"3", "str":"chizuru cover colored"},
-			{"id":"23", "str":"chizuru kazuya moment kazuya saves chizuru from drowning"},
 			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
-			{"id":"3", "str":"sample"},
+			{"id":"3", "str":"chizuru cover colored"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
 			{"id":"6", "str":"sample"},
@@ -3892,7 +3886,8 @@
 			{"id":"19", "str":"sample"},
 			{"id":"20", "str":"sample"},
 			{"id":"21", "str":"sample"},
-			{"id":"22", "str":"sample"}
+			{"id":"22", "str":"sample"},
+			{"id":"23", "str":"chizuru kazuya moment kazuya saves chizuru from drowning"}
 		]
 	},
 	{
@@ -3902,7 +3897,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and Friends"},
 			{"id":"1", "str":"chizuru cover"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -3933,7 +3927,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and Fighting Like Kids"},
 			{"id":"1", "str":"chizuru cover boxer boxing gloves"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -3964,7 +3957,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and The Pocky Game"},
 			{"id":"1", "str":"chizuru cover chizuru bikini chizuru swimsuit"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -4084,9 +4076,8 @@
 		"page":
 		[
 			{"id":"0", "str":"The Girlfriend and The Sea Part 2"},
-			{"id":"2", "str":"mami cover swimsuit bikini"},
 			{"id":"1", "str":"sample"},
-			{"id":"2", "str":"sample"},
+			{"id":"2", "str":"mami cover swimsuit bikini"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
@@ -4116,7 +4107,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and The Sea Part 1"},
 			{"id":"1", "str":"chizuru cover swimsuit bikini"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -4147,7 +4137,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and My Broken Heart"},
 			{"id":"1", "str":"chizuru cover"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -4209,7 +4198,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and The Ex"},
 			{"id":"1", "str":"chizuru cover mami cover kazuya cover dolls"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -4239,10 +4227,9 @@
 		"page":
 		[
 			{"id":"0", "str":"The Ex, Nanami Mami"},
-			{"id":"3", "str":"chizuru cover"},
 			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
-			{"id":"3", "str":"sample"},
+			{"id":"3", "str":"chizuru cover"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
 			{"id":"6", "str":"sample"},
@@ -4271,7 +4258,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend and My Neighbour"},
 			{"id":"1", "str":"chizuru cover colored"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
@@ -4301,9 +4287,8 @@
 		"page":
 		[
 			{"id":"0", "str":"My Girlfriend"},
-			{"id":"2", "str":"chizuru cover"},
 			{"id":"1", "str":"sample"},
-			{"id":"2", "str":"sample"},
+			{"id":"2", "str":"chizuru cover"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
 			{"id":"5", "str":"sample"},
@@ -4333,7 +4318,6 @@
 		[
 			{"id":"0", "str":"The Girlfriend, Mizuhara Chizuru"},
 			{"id":"1", "str":"chizuru cover colored"},
-			{"id":"1", "str":"sample"},
 			{"id":"2", "str":"sample"},
 			{"id":"3", "str":"sample"},
 			{"id":"4", "str":"sample"},
