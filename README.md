@@ -8,8 +8,8 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 
 - All **lowercase** only, *except for Chapter title*.
 - *Chapter Page* with id **0** is the title of the chapter.
-- **NO special characters**, aside from:
-  - "*single quotation*" ( **'** )
+- **No special characters**, <u>*aside from*</u>:
+  - "*single quotation*" ( **'** ).
   - "*hyphen*" ( **-** ).
 - Simplify lines like "*Whaaaat*" to just "*what*".
 - No line breaks. All strings must be separated by **spaces only**.
@@ -27,6 +27,7 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 	
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
+    - Ch. 028 - 032
     - Ch. 049 - 102
 	- Ch. 119 - 160.5
 	
