@@ -77,6 +77,10 @@ client.on('message', async message => {
 			// Declare the title (desc) of the search results
 			var desc = `Search results for query : **${searchString}**`;
 			
+			// Create Regex Exp
+			var searchRegex = new RegExp(`\\b${searchString}\\b`, "i");
+			console.log(`Regex Exp: ${searchRegex}`);
+			
 			if (searchString !== "" && searchString.length > 2)
 			{
 				
@@ -99,7 +103,7 @@ client.on('message', async message => {
 
 							if (page !== "0")
 							{
-								if (text.includes(searchString))
+								if (searchRegex.test(text))
 								{
 									var pageLink = `[${page}](${link}/${page})`;
 									pageRes = pageRes.concat(pageLink, ', ');
@@ -157,8 +161,15 @@ client.on('message', async message => {
 					const embeds = generatePaginatedMsg(embedPages, desc);
 					console.log(`Length of embed (page count): ${embeds.length}\nTotal chapter results: ${chapterCount}`);
 					
+					// set title
+					var title = pageString(currentPage+1, embeds.length, chapterCount);
+					
+					// change MessageEmbed Title
+					const editEmbed = new MessageEmbed(embeds[currentPage])
+						.setTitle(title);
+
 					// send message
-					const queueEmbed = await message.channel.send(pageString(currentPage+1, embeds.length, chapterCount), embeds[currentPage]);
+					const queueEmbed = await message.channel.send("", editEmbed);
 					
 					// Add paginator, if it exceeds 1 page
 					if (chapterCount > 6)
@@ -182,7 +193,10 @@ client.on('message', async message => {
 								if (currentPage !== 0)
 								{
 									--currentPage;
-									queueEmbed.edit(pageString(currentPage+1, embeds.length, chapterCount), embeds[currentPage]);
+									title = pageString(currentPage+1, embeds.length, chapterCount);
+									const editEmbed = new MessageEmbed(embeds[currentPage])
+										.setTitle(title);
+									queueEmbed.edit("", editEmbed);
 								}
 								reaction.users.remove(user);
 							}
@@ -191,7 +205,10 @@ client.on('message', async message => {
 								if (currentPage < embeds.length-1)
 								{
 									currentPage++;
-									queueEmbed.edit(pageString(currentPage+1, embeds.length, chapterCount), embeds[currentPage]);
+									title = pageString(currentPage+1, embeds.length, chapterCount);
+									const editEmbed = new MessageEmbed(embeds[currentPage])
+										.setTitle(title);
+									queueEmbed.edit("", editEmbed);
 								}
 								reaction.users.remove(user);
 							}
