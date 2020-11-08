@@ -27,10 +27,10 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 	
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
-    - Ch. 028 - 102
+    - Ch. 006 - 102
 	- Ch. 119 - 160.5
 	
 ## Proofreading:
 - Me
-- [Cloak]()
-- [guardianofbooks]()
+- [Cloak](https://www.reddit.com/u/CloakedUnderShadows)
+- [guardianofbooks](https://www.reddit.com/u/guardianofbooks)

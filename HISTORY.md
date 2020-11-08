@@ -1,5 +1,11 @@
 # KanoKari Search Discord Bot
 
+# Version 1.7.0
+  **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 3 - 27** -> Contents.
+  - Added some cover info, and tags.
+  - Minor Cleanups.
+
 # Version 1.6.0
   **Changes to Bot:**
   - Changed **searching** from **'.include'** -> **'Regex Expression'**.
