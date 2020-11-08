@@ -2,8 +2,7 @@
 
 # Version 1.7.0
   **Changes to [KanoKariOCR.json] File:**
-  - Added **Ch. 3 - 5** -> Contents.
-  - Added **Ch. 14 - 27** -> Contents.
+  - Added **Ch. 3 - 27** -> Contents.
   - Minor Cleanups.
 
 # Version 1.6.0
