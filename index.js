@@ -238,6 +238,9 @@ client.on('message', async message => {
 						.setDescription(`No results found for query: [ **${searchString} ]**`)
 						.setColor(EMBEDColor);
 					message.channel.send('', noresEmbed)
+					.then(msg => {
+						msg.delete({ timeout: 5000 })
+					})
 					.catch(err => console.error(err));
 				}
 			}

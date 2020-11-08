@@ -1,5 +1,12 @@
 # KanoKari Search Discord Bot
 
+# Version 1.8.0
+  **Changes to Bot:**
+  - Remove **'No Result found'** message after **5 seconds**.
+  
+  **Changes to [KanoKariOCR.json] File:**
+  - Changes in **tags**.
+
 # Version 1.7.0
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 3 - 27** -> Contents.
