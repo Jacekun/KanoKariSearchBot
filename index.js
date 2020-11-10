@@ -22,6 +22,7 @@ const cmdTitle = ';kt';
 const cmdHelp = ';khelp';
 const cmdExtra = ";kextra";
 const EMBEDColor = 0x155A1B;
+const MaxChPage = 7;
 
 console.log('Loaded all dependencies!');
 
@@ -75,7 +76,7 @@ client.on('message', async message => {
 			console.log(`User: ${message.author.username} (${message.author}), Query: [ ${query} ]`);
 			
 			// Declare the title (desc) of the search results
-			var desc = `Search results for query : **${searchString}**`;
+			var desc = `Manga text search "${searchString}" results`;
 			
 			// Create Regex Exp
 			var searchRegex = new RegExp(`\\b${searchString}\\b`, "i");
@@ -136,7 +137,7 @@ client.on('message', async message => {
 								embedPages.push({ word: results });
 								chapterCount = chapterCount + 1;
 							}
-							desc = `**Extra chapters** [ Count: **${chapterCount}** ]`;
+							desc = `Extra chapters`;
 						}
 						else
 						{
@@ -158,11 +159,11 @@ client.on('message', async message => {
 					// make the embed
 					let currentPage = 0;
 					
-					const embeds = generatePaginatedMsg(embedPages, desc);
+					const embeds = generatePaginatedMsg(embedPages);
 					console.log(`Length of embed (page count): ${embeds.length}\nTotal chapter results: ${chapterCount}`);
 					
-					// set title
-					var title = pageString(currentPage+1, embeds.length, chapterCount);
+					// set title (Search Query + Page Count)
+					var title = pageString(currentPage+1, embeds.length, chapterCount, desc);
 					
 					// change MessageEmbed Title
 					const editEmbed = new MessageEmbed(embeds[currentPage])
@@ -172,7 +173,7 @@ client.on('message', async message => {
 					const queueEmbed = await message.channel.send("", editEmbed);
 					
 					// Add paginator, if it exceeds 1 page
-					if (chapterCount > 6)
+					if (chapterCount > MaxChPage + 1)
 					{
 						await queueEmbed.react('⬅️');
 						await queueEmbed.react('➡️');
@@ -186,14 +187,14 @@ client.on('message', async message => {
 					collector.on('collect', async (reaction, user) =>
 					{
 						// Add paginator, if it exceeds 1 page
-						if (chapterCount > 6)
+						if (chapterCount > MaxChPage + 1)
 						{
 							if (reaction.emoji.name === '⬅️')
 							{
 								if (currentPage !== 0)
 								{
 									--currentPage;
-									title = pageString(currentPage+1, embeds.length, chapterCount);
+									title = pageString(currentPage+1, embeds.length, chapterCount, desc);
 									const editEmbed = new MessageEmbed(embeds[currentPage])
 										.setTitle(title);
 									queueEmbed.edit("", editEmbed);
@@ -205,7 +206,7 @@ client.on('message', async message => {
 								if (currentPage < embeds.length-1)
 								{
 									currentPage++;
-									title = pageString(currentPage+1, embeds.length, chapterCount);
+									title = pageString(currentPage+1, embeds.length, chapterCount, desc);
 									const editEmbed = new MessageEmbed(embeds[currentPage])
 										.setTitle(title);
 									queueEmbed.edit("", editEmbed);
@@ -233,13 +234,14 @@ client.on('message', async message => {
 				else
 				{
 					// no results
-					console.log(`No results for query: ${searchString}`);
+					var textNoResult = `Manga text search for "${searchString}" returned no results!`;
+					console.log(textNoResult);
 					const noresEmbed = new MessageEmbed()
-						.setDescription(`No results found for query: [ **${searchString} ]**`)
+						.setTitle(textNoResult)
 						.setColor(EMBEDColor);
 					message.channel.send('', noresEmbed)
 					.then(msg => {
-						msg.delete({ timeout: 5000 })
+						msg.delete({ timeout: 4000 })
 					})
 					.catch(err => console.error(err));
 				}
@@ -250,12 +252,12 @@ client.on('message', async message => {
 
 client.login(process.env.BOT_TOKEN);
 
-function generatePaginatedMsg(queue, desc)
+function generatePaginatedMsg(queue)
 {
-	var maxPP = 5;
-	if (queue.length == 6)
+	var maxPP = MaxChPage;
+	if (queue.length == MaxChPage+1)
 	{
-		maxPP = 6;
+		maxPP = MaxChPage + 1;
 	}
 	const embeds = 	[];
 	let k = maxPP;
@@ -266,14 +268,14 @@ function generatePaginatedMsg(queue, desc)
 		k += maxPP;
 		const info = current.map(obj => obj.word).join('\n');
 		const embed = new MessageEmbed()
-			.setDescription(`${desc}\n${info}`)
+			.setDescription(`${info}`)
 			.setColor(EMBEDColor);
 		embeds.push(embed);
 	}
 	return embeds;
 }
 
-function pageString(current, max, chapterCount)
+function pageString(current, max, chapterCount, desc)
 {
-	return `**Current Page : ${current}/${max}** - ( **${chapterCount}** )`;
+	return `${desc} | Page : ${current} / ${max} - (${chapterCount})`;
 }
