@@ -8,7 +8,7 @@
   - Set 'Chapter per Page' results from **5** to **7**.
   
   **Changes to [KanoKariOCR.json] File:**
-  - Added **Ch. 103 - 111** -> Contents.
+  - Added **Ch. 103 - 112** -> Contents.
   - Changes in **tags**.
 
 # Version 1.7.0
