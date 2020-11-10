@@ -5,6 +5,7 @@
   - Remove **'No Result found'** message after **5 seconds**.
   
   **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 103 - 111** -> Contents.
   - Changes in **tags**.
 
 # Version 1.7.0
