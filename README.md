@@ -31,14 +31,14 @@ Finds where the text query is located, and returns the Chapter and Page. <br>
 	- Extra Ch. 23.5, 160.5
 - [lapis (provider)](https://discordhub.com/profile/377748624337272836)
 	- Ch. 001 - 153
-	- Extra Ch. 69.5
+	- Extra Ch. 32.5, 32.6, 41.5, 69.5
 - [guardianofbooks](https://www.reddit.com/u/guardianofbooks)
     - Ch. 161
 	
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
 	- Ch. 003 - 160
-	- Extra Ch. 23.5, 69.5, 160.5
+	- Extra Ch. 23.5, 32.5, 32.6, 41.5, 69.5, 160.5
 	
 ## Proofreading:
 - Me
