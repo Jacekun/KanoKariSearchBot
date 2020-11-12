@@ -1,5 +1,11 @@
 # KanoKariSearchBot
-Discord Bot written in Javascript that searches for text in the Manga series KanoKari and tells the Chapter and Pages the query is located in.
+
+Discord Bot, written in Javascript. <br>
+Searches for text in the Manga series [KanoKari](https://anilist.co/manga/99943/Kanojo-Okarishimasu). <br>
+Finds where the text query is located, and returns the Chapter and Page. <br>
+
+**Written in:** Discordjs v12.3.1. <br>
+**For manga series:** [Kanojo, Okarishimasu](https://anilist.co/manga/99943/Kanojo-Okarishimasu).
 
 *View Project History here* : [**HISTORY**](/HISTORY.md)
 
