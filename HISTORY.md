@@ -2,7 +2,8 @@
 
 # Version 1.9.0
   **Changes to [KanoKariOCR.json] File:**
-  - Added **Extra Ch. 69.5** -> Title, Contents, Link, and Cover info.
+  - Added **Extra Ch. 23.5, 69.5** -> Title, Contents, Link, and Cover info.
+  - Cleaned most placeholders.
 
 # Version 1.8.0
   **Changes to Bot:**
