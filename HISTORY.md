@@ -7,9 +7,9 @@
 # Version 1.8.0
   **Changes to Bot:**
   - Remove **'No Result found'** message after **4 seconds**.
-  - Changed 'Search Result' and 'No Result Found' messages.
-  - Moved MessageEmbed 'Descriptions' to 'Title'.
-  - Set 'Chapter per Page' results from **5** to **7**.
+  - Changed **'Search Result'** and **'No Result Found'** messages.
+  - Moved *MessageEmbeds* **'Descriptions'** to **'Title'**.
+  - Set **'Chapter per Page'** results from **5** to **7**.
   
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 103 - 118** -> Contents.
