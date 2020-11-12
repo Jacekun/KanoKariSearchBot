@@ -1,5 +1,9 @@
 # KanoKari Search Discord Bot
 
+# Version 1.9.0
+  **Changes to [KanoKariOCR.json] File:**
+  - Added **Extra Ch. 69.5** -> Title, Contents, Link, and Cover info.
+
 # Version 1.8.0
   **Changes to Bot:**
   - Remove **'No Result found'** message after **4 seconds**.
