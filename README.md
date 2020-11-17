@@ -1,5 +1,11 @@
 # KanoKariSearchBot
-Discord Bot written in Javascript that searches for text in the Manga series KanoKari and tells the Chapter and Pages the query is located in.
+
+Discord Bot, written in Javascript. <br>
+Searches for text in the Manga series [KanoKari](https://anilist.co/manga/99943/Kanojo-Okarishimasu). <br>
+Finds where the text query is located, and returns the Chapter and Page. <br>
+
+**Written in:** Discordjs v12.3.1. <br>
+**For manga series:** [Kanojo, Okarishimasu](https://anilist.co/manga/99943/Kanojo-Okarishimasu).
 
 *View Project History here* : [**HISTORY**](/HISTORY.md)
 
@@ -21,15 +27,18 @@ Discord Bot written in Javascript that searches for text in the Manga series Kan
 
 ## Transcription :
 - Me
-	- Ch. 154 - 160.5
+	- Ch. 154 - 161
+	- Extra Ch. 10.5, 14.5, 23.5, 160.5
 - [lapis (provider)](https://discordhub.com/profile/377748624337272836)
 	- Ch. 001 - 153
+	- Extra Ch. 32.5, 32.6, 41.5, 69.5
 - [guardianofbooks](https://www.reddit.com/u/guardianofbooks)
     - Ch. 161
 	
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
-	- Ch. 003 - 160.5
+	- Ch. 003 - 160
+	- Extra Ch. 10.5, 14.5, 23.5, 32.5, 32.6, 41.5, 69.5, 160.5
 	
 ## Proofreading:
 - Me
