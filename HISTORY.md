@@ -3,6 +3,7 @@
 # Version 1.10.0
   **Changes to [KanoKariOCR.json] File:**
   - Added **Extra Ch. 5.5** -> Title, Contents, and Link.
+  - Completed **Extra Ch. 10.5** -> Contents.
   - Cleaned some placeholders.
 
 # Version 1.9.0
