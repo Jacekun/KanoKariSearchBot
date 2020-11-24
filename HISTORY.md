@@ -2,9 +2,10 @@
 
 # Version 1.10.0
   **Changes to [KanoKariOCR.json] File:**
+  - Added **Ch. 161** -> Title, Contents, Link, and Cover info.
   - Added **Extra Ch. 5.5** -> Title, Contents, and Link.
   - Completed **Extra Ch. 10.5** -> Contents.
-  - Cleaned some placeholders.
+  - Cleaned placeholders.
 
 # Version 1.9.0
   **Changes to [KanoKariOCR.json] File:**
