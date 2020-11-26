@@ -6,6 +6,7 @@
   - Added **Extra Ch. 5.5** -> Title, Contents, and Link.
   - Completed **Extra Ch. 10.5** -> Contents.
   - Added various tags to pages.
+  - Fixed spelling mistakes.
   - Cleaned placeholders.
 
 # Version 1.9.0
