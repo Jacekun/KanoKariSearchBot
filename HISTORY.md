@@ -5,7 +5,7 @@
   - Added **Ch. 161** -> Title, Contents, Link, and Cover info.
   - Added **Extra Ch. 5.5** -> Title, Contents, and Link.
   - Completed **Extra Ch. 10.5** -> Contents.
-  - Added various tags to pages.
+  - Added various tags to pages. -> Ch.: 3, 152-157.
   - Fixed spelling mistakes.
   - Cleaned placeholders.
 
