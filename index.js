@@ -76,7 +76,7 @@ client.on('message', async message => {
 			console.log(`User: ${message.author.username} (${message.author}), Query: [ ${query} ]`);
 			
 			// Declare the title (desc) of the search results
-			var desc = `Manga text search "${searchString}" results`;
+			var desc = `"${searchString}" search results`;
 			
 			// Create Regex Exp
 			var searchRegex = new RegExp(`\\b${searchString}\\b`, "i");
@@ -234,7 +234,7 @@ client.on('message', async message => {
 				else
 				{
 					// no results
-					var textNoResult = `Manga text search for "${searchString}" returned no results!`;
+					var textNoResult = `Search for "${searchString}" returned no results!`;
 					console.log(textNoResult);
 					const noresEmbed = new MessageEmbed()
 						.setTitle(textNoResult)
