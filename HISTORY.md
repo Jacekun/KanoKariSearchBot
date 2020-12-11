@@ -1,6 +1,9 @@
 # KanoKari Search Discord Bot
 
 # Version 1.11.0
+  **Changes to Bot:**
+  - Shortened Descriptions on MessageEmbeds.
+
   **Changes to [KanoKariOCR.json] File:**
   - Added **Ch. 001** -> Title, Contents, Link, and Cover info.
 
