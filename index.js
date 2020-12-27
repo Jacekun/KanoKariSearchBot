@@ -1,6 +1,7 @@
 console.log('Getting discord.js....');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+//const config = require("./config.json"); // for DEBUGGING
 
 console.log('Creating MessageEmbed....');
 const { MessageEmbed } = require('discord.js');
@@ -28,6 +29,14 @@ console.log('Loaded all dependencies!');
 
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setPresence({
+        status: 'Use ;khelp to View Help Message!',
+        activity: {
+            name: ';khelp',
+            type: 'LISTENING'
+        }
+	});
+	console.log('Status set!');
 });
 
 client.on('message', async message => {
@@ -251,6 +260,7 @@ client.on('message', async message => {
 });
 
 client.login(process.env.BOT_TOKEN);
+//client.login(config.token); // For DEBUGGING
 
 function generatePaginatedMsg(queue)
 {
