@@ -5,7 +5,7 @@
   - Shortened Descriptions on MessageEmbeds.
 
   **Changes to [KanoKariOCR.json] File:**
-  - Added **Ch. 001** -> Title, Contents, Link, and Cover info.
+  - Added **Ch. 001, 002** -> Title, Contents, Link, and Cover info.
 
 # Version 1.10.0
   **Changes to [KanoKariOCR.json] File:**
