@@ -7,10 +7,10 @@ console.log('Creating MessageEmbed....');
 const { MessageEmbed } = require('discord.js');
 
 console.log('Getting fs....');
-var fs = require("fs");
+const fs = require("fs");
 
 console.log('Reading JSON file...');
-var json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
+const json = fs.readFileSync("./KanoKariOCR.json", {"encoding": "utf-8"});
 
 console.log('Making JSON Object...');
 var JSONObj = JSON.parse(json);
@@ -41,14 +41,14 @@ client.once('ready', () => {
 
 client.on('message', async message => {
 	// received a request
-	var query = message.content;
+	let query = message.content;
 	if (query.substr(0, cmdPrefix.length) == cmdPrefix)
 	{
 
 		// !help command
 		if (query == cmdHelp)
 		{
-		var textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami]* cover *[colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.\n**${cmdExtra}** -> will show extra chapters.`;
+		const textHelp = `**${cmdSearch}** *text_to_search*  -> to query for texts.\n**${cmdSearch}** *[sumi, chizuru, ruka, mami]* cover *[colored]* -> displays the pages of the covers\n**${cmdTitle}** *text_to_search* -> to find chapter whose title includes the query.\n\nNOTE: Use ONLY lowercase and AVOID using special characters.\nOnly special character allowed is an Apostrophe ( ' ) and Hyphen ( - ).\n\nExample: **${cmdSearch}** *sumi-chan's*\n\n**${cmdHelp}** will show this message.\n**${cmdExtra}** -> will show extra chapters.`;
 		const helpEmbed = new MessageEmbed()
 			.setDescription(textHelp)
 			.setColor(EMBEDColor)
@@ -63,12 +63,17 @@ client.on('message', async message => {
 		else if ((query.substr(0, cmdSearch.length)===cmdSearch) || (query.substr(0, cmdTitle.length)===cmdTitle) || (query === cmdExtra))
 		{
 			// Setup variables
-			var searchForTitle = 0;
-			var results = "";
-			var pageRes = "";
-			var len = query.length - cmdSearch.length;
-			var searchString = query.substr(cmdSearch.length, len).trim().toLowerCase();
-			var chapterCount = 0;
+			let searchForTitle = 0;
+			let results = "";
+			let pageRes = "";
+			let len = query.length - cmdSearch.length;
+			let searchString = query.substr(cmdSearch.length, len).trim().toLowerCase();
+			let chapterCount = 0;
+			let chapter = null;
+			let link = null;
+			let page = null;
+			let text = null;
+			let pageLink = null;
 			
 			embedPages = []; // reset embedPages obj array
 			
@@ -85,37 +90,37 @@ client.on('message', async message => {
 			console.log(`User: ${message.author.username} (${message.author}), Query: [ ${query} ]`);
 			
 			// Declare the title (desc) of the search results
-			var desc = `"${searchString}" search results`;
+			let desc = `"${searchString}" search results`;
 			
 			// Create Regex Exp
-			var searchRegex = new RegExp(`\\b${searchString}\\b`, "i");
+			let searchRegex = new RegExp(`\\b${searchString}\\b`, "i");
 			console.log(`Regex Exp: ${searchRegex}`);
 			
 			if (searchString !== "" && searchString.length > 2)
 			{
 				
 				// Iterate through every chapter
-				for (var iChapter in JSONObj.KK)
+				for (let iChapter in JSONObj.KK)
 				{
 					
 					pageRes = "";
-					var chapter = JSONObj.KK[iChapter].chap;
-					var link = JSONObj.KK[iChapter].link;
+					chapter = JSONObj.KK[iChapter].chap;
+					link = JSONObj.KK[iChapter].link;
 					
 					// Check if looking through all chapters
 					if (searchForTitle < 1)
 					{
 						// Iterate through pages
-						for (var iPages in JSONObj.KK[iChapter].page)
+						for (let iPages in JSONObj.KK[iChapter].page)
 						{
-							var page = JSONObj.KK[iChapter].page[iPages].id;
-							var text = JSONObj.KK[iChapter].page[iPages].str;
+							page = JSONObj.KK[iChapter].page[iPages].id;
+							text = JSONObj.KK[iChapter].page[iPages].str;
 
 							if (page !== "0")
 							{
 								if (searchRegex.test(text))
 								{
-									var pageLink = `[${page}](${link}/${page})`;
+									pageLink = `[${page}](${link}/${page})`;
 									pageRes = pageRes.concat(pageLink, ', ');
 								}
 							}
@@ -136,7 +141,7 @@ client.on('message', async message => {
 					else
 					{
 						// Check only chapter 0 for title
-						var text = JSONObj.KK[iChapter].page[0].str;
+						text = JSONObj.KK[iChapter].page[0].str;
 						
 						if (query === cmdExtra)
 						{
@@ -150,7 +155,7 @@ client.on('message', async message => {
 						}
 						else
 						{
-							var textLower = text.toLowerCase().replace(",", "");
+							let textLower = text.toLowerCase().replace(",", "");
 							if (textLower.includes(searchString))
 							{
 								results = `[Ch. ${chapter}](${link}) : ${text}`;
@@ -172,7 +177,7 @@ client.on('message', async message => {
 					console.log(`Length of embed (page count): ${embeds.length}\nTotal chapter results: ${chapterCount}`);
 					
 					// set title (Search Query + Page Count)
-					var title = pageString(currentPage+1, embeds.length, chapterCount, desc);
+					let title = pageString(currentPage+1, embeds.length, chapterCount, desc);
 					
 					// change MessageEmbed Title
 					const editEmbed = new MessageEmbed(embeds[currentPage])
@@ -243,7 +248,7 @@ client.on('message', async message => {
 				else
 				{
 					// no results
-					var textNoResult = `Search for "${searchString}" returned no results!`;
+					let textNoResult = `Search for "${searchString}" returned no results!`;
 					console.log(textNoResult);
 					const noresEmbed = new MessageEmbed()
 						.setTitle(textNoResult)
@@ -264,7 +269,7 @@ client.login(process.env.BOT_TOKEN);
 
 function generatePaginatedMsg(queue)
 {
-	var maxPP = MaxChPage;
+	let maxPP = MaxChPage;
 	if (queue.length == MaxChPage+1)
 	{
 		maxPP = MaxChPage + 1;
