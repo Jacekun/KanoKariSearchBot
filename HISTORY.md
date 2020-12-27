@@ -1,5 +1,10 @@
 # KanoKari Search Discord Bot
 
+# Version 1.11.1
+  **Changes to Bot:**
+  - Set Bot Status.
+  - Added debugging config.
+
 # Version 1.11.0
   **Changes to Bot:**
   - Shortened Descriptions on MessageEmbeds.
