@@ -38,7 +38,7 @@ Finds where the text query is located, and returns the Chapter and Page. <br>
 	
 ## Editing (Formatting and Adding to [KanoKariOCR.json](/KanoKariOCR.json) file) :
 - Me
-	- Ch. 003 - 161
+	- Ch. 001 - 161
 	- Extra Ch. 5.5 / 10.5 / 14.5 / 23.5 / 32.5 / 32.6 / 41.5 / 69.5 / 160.5
 	
 ## Proofreading:
